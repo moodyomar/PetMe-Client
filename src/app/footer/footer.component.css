@@ -1,0 +1,6 @@
+@media screen and (max-width:768px){
+     /* hiding 2 columns in mobile  as it only for UI and do nothing */
+     .footerLinks1,.footerLinks2{
+          display: none;
+     }
+}
