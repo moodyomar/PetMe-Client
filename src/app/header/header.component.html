@@ -1,8 +1,10 @@
 <div class="container-fluid bg-dark text-light">
      <div class="container">
           <div class="d-flex justify-content-between align-items-center">
+            <div class="logIn"><a routerLink="/login" [routerLinkActive]="'active'"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+            </div>
                <div class="col-lg-3">
-                    <h3 class="text-warning">LOGO</h3>
+                <a routerLink="/"[routerLinkActive]="'active'" class="text-decoration-none"><h3 class="text-warning my-2">LOGO</h3></a>
                </div>
                <nav class="text-end col-lg-9 d-flex justify-content-end">
                     <a routerLink="/"[routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}">Home</a>
@@ -11,13 +13,16 @@
                     <a routerLink="/login" [routerLinkActive]="'active'">Login</a>
                     <a routerLink="/signup" [routerLinkActive]="'active'">Sign Up</a>
                </nav>
+               <div class="mobileMenu"><i class="fa fa-bars" aria-hidden="true"></i>
+               </div>
           </div>
      </div>
 </div>
+<!-- Hero - Cover image,title btn ... -->
 <div class="container-fluid d-flex hero align-items-center text-white shadow">
 <div class="col text-center ">
      <h1 class="display-1 textShadow">The website tittle</h1>
-     <h6>Lorem ipsum dolor sit amet</h6>
+     <h6 class="textShadow">Lorem ipsum dolor sit amet</h6>
      <button class="customBtn mt-4">Scroll Down</button>
 </div>
      

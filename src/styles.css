@@ -13,11 +13,7 @@ h1,h2,h3,h4,h5,h6,a,p{
      transition: .3s all ease-out;
      border: 2px solid #fff;
 }
-.customBtn:hover{
-     background-color: #FFC009;
-     border: 2px solid rgba(255, 255, 255, 0);
-     transition: .3s all ease-in;
-}
+
 nav a, footer a{
      display: block;
      padding: 12px;
@@ -29,4 +25,19 @@ nav a:hover,footer a:hover{
      transform: scale(1.2);
      color: #FFC009;
      transition: .3s all ease-in;
+}
+
+@media screen and (max-width: 992px) {
+  .customBtn:active{
+    background-color: #FFC009;
+    border: 2px solid rgba(255, 255, 255, 0);
+    transition: .3s all ease-in;
+  }
+}
+@media screen and (min-width: 992px) {
+  .customBtn:hover{
+    background-color: #FFC009;
+    border: 2px solid rgba(255, 255, 255, 0);
+    transition: .3s all ease-in;
+  }
 }
