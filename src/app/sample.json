@@ -1,0 +1,34 @@
+[
+  {
+  "name":"Ricky",
+  "description":"Ricky is a clam smart dog , love to eat and sleep a lot sometimes,Ricky like to play with kids and pretty much everyone , looking for a loving family",
+  "age":1,
+  "size":"small",
+  "breed":"Border Colie",
+  "gender":"male"
+},
+{
+  "name":"Sakura",
+  "description":"Sakura is a little lovely spoiled dog , full of energy , and need someone to pet her and brush her hair ever now and then, she likes to play with other dogs or cats,very friendly and looking for a warm loving family",
+  "age":4,
+  "size":"small",
+  "breed":"Chihuahua",
+  "gender":"female"
+},
+{
+  "name":"Joker",
+  "description":"Joker is a smart dog, full of energy and a lot of love, like to run a lot and very friendly with kids, looking for a loving family",
+  "age":2,
+  "size":"medium",
+  "breed":"German Shepherd",
+  "gender":"male"
+},
+{
+  "name":"Ino",
+  "description":"Ino is very active dog, she likes to run and move a lot, sometimes she likes to bite a lot but in a friendly way and can be taught a lot, she is very smart and lovely, looking for a warm family to love her.",
+  "age":0.5,
+  "size":"small",
+  "breed":"Belgian Shepherd",
+  "gender":"female"
+}
+]

@@ -1,27 +1,38 @@
-.hero{
-     background-image: url('/assets/images/bgGreen.jpg');
-     background-size: cover;
-     height: 40vh;
+.hero {
+  background-image: url('/assets/images/4.jpg');
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  background-position: 0px 30%; 
+  height: 50vh;
 }
-.textShadow{
-  text-shadow: 4px 4px 7px rgb(0, 0, 0,0.4);
+
+.textShadow {
+  text-shadow: 4px 4px 7px rgb(0, 0, 0, 0.4);
 }
-.mobileMenu,.logIn{
+
+.mobileMenu,
+.logIn {
   display: none;
 }
 
 @media screen and (max-width: 992px) {
-  .mobileMenu,.logIn{
+
+  .mobileMenu,
+  .logIn {
     display: block;
   }
-.mobileMenu a, .logIn a{
-  color: #fff;
-}
-  .mobileMenu:active,.logIn a:active{
+
+  .mobileMenu a,
+  .logIn a {
+    color: #fff;
+  }
+
+  .mobileMenu:active,
+  .logIn a:active {
     color: #FFC009;
   }
 
-  nav{
+  nav {
     display: none !important;
   }
 

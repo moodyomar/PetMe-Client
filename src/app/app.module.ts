@@ -10,7 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ContactusComponent } from './contactus/contactus.component';
-import { TempNameComponent } from './temp-name/temp-name.component';
+import { DogsListComponent } from './dogsList/dogs-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { TempNameComponent } from './temp-name/temp-name.component';
     LoginComponent,
     SignupComponent,
     ContactusComponent,
-    TempNameComponent
+    DogsListComponent
   ],
   imports: [
     BrowserModule,
