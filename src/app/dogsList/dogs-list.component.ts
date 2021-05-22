@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {dogs_ar_json} from "../data/sample"
 
 @Component({
   selector: 'app-temp-name',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dogs-list.component.css']
 })
 export class DogsListComponent implements OnInit {
-
+  dogs_ar:any[] = dogs_ar_json;
   constructor() { }
 
   ngOnInit(): void {
+// this.dogs_ar = dogs_ar_json
   }
 
 }

@@ -1,1 +1,31 @@
-<p>temp-name works!</p>
+<div class="pageTitle text-center my-5">
+  <h1 >Looking for a loving family</h1>
+<p>Dogs and cats are looking for a warm and loving home. Dreaming of adopting a dog or cat?</p>
+</div>
+
+<div class="row">
+  <div class="card shadow hoverable mx-auto my-3" style="width: 18rem;" *ngFor="let dog of dogs_ar">
+    <img src="{{dog.image}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center">{{dog.name}}</h5>
+      <p class="card-text text-center">{{dog.description}}</p>
+      <div class="d-flex justify-content-evenly">
+        <span class="badge bg-warning text-dark customBadge"><i class="fa fa-birthday-cake" aria-hidden="true"></i>
+          {{dog.age}} y.o</span>
+        <span class="badge bg-warning text-dark customBadge"><i class="fa fa-expand" aria-hidden="true"></i>
+          {{dog.size}}</span>
+          <span class="badge bg-warning text-dark customBadge"><i class="fa fa-mars" aria-hidden="true"></i>
+             {{dog.gender}}</span>
+      </div>
+      <div class="d-flex mt-1 justify-content-evenly">
+        <span class="badge bg-warning text-dark customBadge"><i class="fa fa-paw" aria-hidden="true"></i>
+          :{{dog.breed}}</span>
+      </div>
+  
+    <div class="d-flex justify-content-center my-3">
+      <a href="#" class="btn btn-dark customPetmeBtn">Pet Me <i class="fa fa-heart" aria-hidden="true"></i>
+      </a>
+    </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+.hoverable:hover{
+  transform: scale(1.05);
+  transition: .2s ease-in;
+ }
+ .hoverable{
+ transition: .2s ease-out;
+ }
+
+.customBadge:hover{
+color: #FFC009 !important;
+background-color: #212529 !important;
+}
+
+.customPetmeBtn:hover{
+  color: #212529 !important;
+  background-color: #FFC009 !important;
+  border: none;
+  outline: none;
+  }
