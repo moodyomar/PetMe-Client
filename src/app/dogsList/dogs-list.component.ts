@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {dogs_ar_json} from "../data/sample"
+import { ApiServiceService } from '../services/api-service.service';
+import { DogsService } from '../services/dogs.service';
 
 @Component({
   selector: 'app-temp-name',
@@ -8,10 +10,16 @@ import {dogs_ar_json} from "../data/sample"
 })
 export class DogsListComponent implements OnInit {
   dogs_ar:any[] = dogs_ar_json;
-  constructor() { }
+  constructor(private apiSer:ApiServiceService,private dogsSer:DogsService) { }
+
 
   ngOnInit(): void {
 // this.dogs_ar = dogs_ar_json
+this.dogs_ar = this.dogsSer.getDogs();
+let url = `http://localhost:3000/dogs`
+this.dogsSer.doApiList(url)
+console.log(this.dogs_ar)
+console.log("api end")
   }
 
 }

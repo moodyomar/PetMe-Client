@@ -1,10 +1,12 @@
-<div class="pageTitle text-center my-5">
-  <h1 >Looking for a loving family</h1>
-<p>Dogs and cats are looking for a warm and loving home. Dreaming of adopting a dog or cat?</p>
+<div class="container">
+  <div class="pageTitle text-center my-5">
+    <h1>Looking for a loving family</h1>
+  <p>Dogs and cats are looking for a warm and loving home. Dreaming of adopting a dog or cat?</p>
+  </div>
 </div>
 
 <div class="row">
-  <div class="card shadow hoverable mx-auto my-3" style="width: 18rem;" *ngFor="let dog of dogs_ar">
+  <div class="card shadow hoverable mx-auto my-5" style="width: 18rem;" *ngFor="let dog of dogs_ar">
     <img src="{{dog.image}}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title text-center">{{dog.name}}</h5>
