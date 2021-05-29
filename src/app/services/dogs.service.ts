@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { ApiServiceService } from './api-service.service';
+import { ApiService } from './api.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DogsService {
   dogs_ar:any[] = [];
-  constructor(private apiSer:ApiServiceService) { }
+  constructor(private apiSer:ApiService) { }
 
   getDogs():any{
     return this.dogs_ar;

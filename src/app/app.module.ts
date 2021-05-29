@@ -12,6 +12,7 @@ import { SignupComponent } from './signup/signup.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { DogsListComponent } from './dogsList/dogs-list.component';
 import { HomeComponent } from './home/home.component';
+import { AddDogsComponent } from './add-dogs/add-dogs.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HomeComponent } from './home/home.component';
     SignupComponent,
     ContactusComponent,
     DogsListComponent,
-    HomeComponent
+    HomeComponent,
+    AddDogsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {dogs_ar_json} from "../data/sample"
-import { ApiServiceService } from '../services/api-service.service';
+import { ApiService } from '../services/api.service';
 import { DogsService } from '../services/dogs.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { DogsService } from '../services/dogs.service';
 })
 export class DogsListComponent implements OnInit {
   dogs_ar:any[] = dogs_ar_json;
-  constructor(private apiSer:ApiServiceService,private dogsSer:DogsService) { }
+  constructor(private apiSer:ApiService,private dogsSer:DogsService) { }
 
 
   ngOnInit(): void {

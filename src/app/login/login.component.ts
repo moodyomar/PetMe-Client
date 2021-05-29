@@ -1,4 +1,5 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +8,7 @@ import { Component, OnInit,ViewChild } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   @ViewChild('f') myForm:any
-  constructor() { }
+  constructor(private apiSer:ApiService) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
         // let data = await this.authSer.logInFb(formData.email,formData.password);
         // deleting firebase configiruation and placing a test ones
         let data = {user:'empty test'}
+        this.apiSer.simplePostRequest(formData)
         // success log in
         if(data.user){
           // TODO : redirect to admin

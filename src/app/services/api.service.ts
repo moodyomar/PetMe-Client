@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient ,HttpHeaders} from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,14 @@ export class ApiService {
 
     return this.http.post(_url,_body,{headers : xAuth})
   }
+
+simplePostRequest(_postBody:any){
+
+  this.http.post('http://localhost:3000/users/login',_postBody).toPromise();
+  
+}
+
+
 
   // getHeader(_url:any,_body:any):any{
   //   if(localStorage["tok"]){

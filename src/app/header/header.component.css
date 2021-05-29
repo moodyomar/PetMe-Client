@@ -32,6 +32,7 @@
   }
 .upperHeader{
   height: 45px !important;
+  position: fixed;
 }
 
 nav { 
@@ -44,9 +45,9 @@ nav {
     padding:0 !important;
     display: flex;
     flex-direction: column;
-justify-content: flex-start !important; 
+    justify-content: flex-start !important; 
     transform: translateX(100%) !important;
-    transition: all .15s ease-out !important;
+    transition: all .2s ease-out !important;
   }
 
   .mobileNavActive{ 
