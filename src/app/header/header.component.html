@@ -1,20 +1,20 @@
-<div class="container-fluid bg-dark text-light">
+<div class="container-fluid bg-dark text-light upperHeader">
      <div class="container">
           <div class="d-flex justify-content-between align-items-center">
-            <div class="logIn"><a routerLink="/login" [routerLinkActive]="'active'"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+            <div class="logIn"><a routerLink="/login" [routerLinkActive]="'active'"><i class="fa fa-user-circle-o fs-3" aria-hidden="true"></i></a>
             </div>
                <div class="col-lg-3">
-                <a routerLink="/"[routerLinkActive]="'active'" class="text-decoration-none"><h3 class="text-warning my-2">LOGO</h3></a>
+                <a routerLink="/"[routerLinkActive]="'active'" class="text-decoration-none"><h3 class="text-warning fs-3 mt-2">LOGO</h3></a>
                </div>
-               <nav class="text-end col-lg-9 d-flex justify-content-end">
+               <nav class="text-end col-lg-9 d-flex justify-content-end shadow" [class.mobileNavActive]="classApplied">
                     <a routerLink="/"[routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}">Home</a>
                     <a routerLink="/dogs" [routerLinkActive]="'active'">Dogs</a>
-                    <!-- <a routerLink="/contact" [routerLinkActive]="'active'">Contact</a> -->
+                    <a routerLink="/contact" [routerLinkActive]="'active'">Contact</a>
                     <a routerLink="/login">Login</a>
                     <a routerLink="/signup">Sign Up</a>
                </nav>
-               <a routerLink="/dogs"><div class="mobileMenu"><i class="fa fa-bars" aria-hidden="true"></i>
-               </div></a>
+               <div class="mobileMenu" (click)="toggleClass()"><i class="fa fa-bars fs-2" aria-hidden="true"></i>
+               </div>
           </div>
      </div>
 </div>
