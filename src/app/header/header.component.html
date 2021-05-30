@@ -6,7 +6,7 @@
                <div class="col-lg-3">
                 <a routerLink="/"[routerLinkActive]="'active'" class="text-decoration-none"><h3 class="text-warning fs-3 mt-2">LOGO</h3></a>
                </div>
-               <nav class="text-end col-lg-9 d-flex justify-content-end shadow" [class.mobileNavActive]="classApplied">
+               <nav (click)="toggleClass()" class="text-end col-lg-9 d-flex justify-content-end shadow" [class.mobileNavActive]="classApplied">
                     <a routerLink="/"[routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}"><i class="fa fa-home" aria-hidden="true"></i>
                       Home</a>
                     <a routerLink="/dogs" [routerLinkActive]="'active'"><i class="fa fa-paw" aria-hidden="true"></i>
