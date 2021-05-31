@@ -19,7 +19,7 @@
       <div>
         <input name="name" #inputName="ngModel" ngModel type="text" class="form-control mt-3" placeholder="Name..."
           required minlength="3">
-        <div *ngIf="inputName.touched && inputName.invalid" class="text-danger text-start">Enter valid phone</div>
+        <div *ngIf="inputName.touched && inputName.invalid" class="text-danger text-start">Enter valid name</div>
       </div>
       <div>
         <input name="phone" #inputPhone="ngModel" ngModel type="text" class="form-control mt-3" placeholder="Phone..."
@@ -31,7 +31,7 @@
         <label>Your birth day:</label>
         <input name="birth" #inputBirth="ngModel" ngModel type="date" class="form-control " placeholder="Birth..."
           required minlength="3">
-        <div *ngIf="inputBirth.touched && inputBirth.invalid" class="text-danger text-start">Enter valid BIrthday</div>
+        <div *ngIf="inputBirth.touched && inputBirth.invalid" class="text-danger text-start">Enter valid Birthday</div>
       </div>
       <div>
         <input name="city" #inputCity="ngModel" ngModel type="text" class="form-control mt-3" placeholder="City..."

@@ -1,0 +1,32 @@
+import { Injectable } from '@angular/core';
+import { ApiService } from './api.service';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UsersService {
+
+  constructor(private apiSer: ApiService) { }
+
+  login(_loginData: any):void {
+    let _url = 'http://localhost:3000/users/login'
+    this.apiSer.postApiRequest(_url, _loginData).subscribe((resp:any) => {
+      console.log(resp)
+    localStorage.setItem("tok",resp.token)
+    },(rej:any)=> {
+      console.log(rej)
+    })
+
+  }
+  signUp(_signUpData:any):void{
+    let _url = 'http://localhost:3000/users/'
+    this.apiSer.postApiRequest(_url, _signUpData).subscribe((resp:any) => {
+      console.log(resp)
+    },(rej:any)=> {
+      console.log(rej)
+      alert(rej.error.err)
+    })
+
+  }
+
+}

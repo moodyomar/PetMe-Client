@@ -11,9 +11,8 @@ const routes: Routes = [
   {path:"", component:HomeComponent},
   {path:"dogs", component:DogsListComponent},
   {path:"contact", component:ContactusComponent},
-  {path:"login", component:LoginComponent, children:[
-    {path:"addDogs",component:AddDogsComponent},
-  ]},
+  {path:"login", component:LoginComponent},
+  {path:"addDogs",component:AddDogsComponent},
   {path:"signup", component:SignupComponent},
 ];
 

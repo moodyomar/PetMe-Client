@@ -18,8 +18,6 @@ export class DogsListComponent implements OnInit {
 this.dogs_ar = this.dogsSer.getDogs();
 let url = `http://localhost:3000/dogs`
 this.dogsSer.doApiList(url)
-console.log(this.dogs_ar)
-console.log("api end")
   }
 
 }

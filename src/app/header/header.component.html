@@ -1,35 +1,40 @@
 <div class="container-fluid bg-dark text-light upperHeader shadow">
-     <div class="container">
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="logIn"><a routerLink="/login" [routerLinkActive]="'active'"><i class="fa fa-user-circle-o fs-3" aria-hidden="true"></i></a>
-            </div>
-               <div class="col-lg-3">
-                <a routerLink="/"[routerLinkActive]="'active'" class="text-decoration-none"><h3 class="text-warning fs-3 mt-2">LOGO</h3></a>
-               </div>
-               <nav (click)="toggleClass()" class="text-end col-lg-9 d-flex justify-content-end shadow" [class.mobileNavActive]="classApplied">
-                    <a routerLink="/"[routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}"><i class="fa fa-home" aria-hidden="true"></i>
-                      Home</a>
-                    <a routerLink="/dogs" [routerLinkActive]="'active'"><i class="fa fa-paw" aria-hidden="true"></i>
-                      Dogs</a>
-                    <a routerLink="/contact" [routerLinkActive]="'active'"><i class="fa fa-envelope" aria-hidden="true"></i>
-                      Contact</a>
-                    <a routerLink="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>
-                      Login</a>
-                    <a routerLink="/signup"><i class="fa fa-user-plus" aria-hidden="true"></i>
-                      Sign Up</a>
-               </nav>
-               <div class="mobileMenu" (click)="toggleClass()"><i class="fa fa-bars fs-2" aria-hidden="true"></i>
-               </div>
-          </div>
-     </div>
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="logIn"><a routerLink="/login" [routerLinkActive]="'active'"><i class="fa fa-user-circle-o fs-3"
+            aria-hidden="true"></i></a>
+      </div>
+      <div class="col-lg-3">
+        <a routerLink="/" [routerLinkActive]="'active'" class="text-decoration-none">
+          <h3 class="text-warning fs-3 mt-2">LOGO</h3>
+        </a>
+      </div>
+      <nav (click)="toggleClass()" class="text-end col-lg-9 d-flex justify-content-end shadow"
+        [class.mobileNavActive]="classApplied">
+        <a routerLink="/" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}"><i class="fa fa-home"
+            aria-hidden="true"></i>
+          Home</a>
+        <a routerLink="/dogs" [routerLinkActive]="'active'"><i class="fa fa-paw" aria-hidden="true"></i>
+          Dogs</a>
+        <a routerLink="/contact" [routerLinkActive]="'active'"><i class="fa fa-envelope" aria-hidden="true"></i>
+          Contact</a>
+        <a routerLink="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>
+          Login</a>
+        <a routerLink="/signup"><i class="fa fa-user-plus" aria-hidden="true"></i>
+          Sign Up</a>
+      </nav>
+      <div class="mobileMenu" (click)="toggleClass()"><i class="fa fa-bars fs-2" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- Hero - Cover image,title btn ... -->
 <div class="container-fluid d-flex hero align-items-center text-white shadow">
-<div class="col text-center ">
-     <h1 class="display-1 textShadow">The website tittle</h1>
-     <h6 class="textShadow">Lorem ipsum dolor sit amet</h6>
-     <button class="customBtn mt-4">Scroll Down</button>
-</div>
-     
+  <div class="col text-center ">
+    <h1 class="display-1 textShadow">The website tittle</h1>
+    <h6 class="textShadow">Lorem ipsum dolor sit amet</h6>
+    <button class="customBtn mt-4">Scroll Down</button>
+  </div>
+
 
 </div>

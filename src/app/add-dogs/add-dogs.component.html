@@ -1,1 +1,63 @@
-<p>add-dogs works!</p>
+<div class="container-fluid">
+  <div class="container text-center p-5">
+    <h1 class="display-4 mb-5">Add a dog
+      <i class="fa fa-angle-double-up text-warning" aria-hidden="true"></i><br>
+
+    </h1>
+    <form #f="ngForm" (ngSubmit)="onSub()" class="col-lg-6 mx-auto">
+      <h5>Help me find a home</h5>
+      <div>
+        <div>
+          <input name="name" #inputName="ngModel" ngModel type="text" class="form-control mt-3" placeholder="Dog's name..."
+            required minlength="3">
+          <div *ngIf="inputName.touched && inputName.invalid" class="text-danger text-start">Enter a valid name</div>
+        </div>
+
+        <input name="age" #inputAge="ngModel" ngModel type="email" class="form-control mt-3"
+          placeholder="Enter dog's age" required>
+        <div *ngIf="inputAge.touched && inputAge.invalid" class="text-danger text-start">Enter a valid age</div>
+      </div>
+
+      <div>
+        <input name="breed" #inputBreed="ngModel" ngModel type="text" class="form-control mt-3" placeholder="Dog's breed..."
+          required minlength="3">
+        <div *ngIf="inputBreed.touched && inputBreed.invalid" class="text-danger text-start">Enter a valid breed</div>
+      </div>
+
+      <div class="mt-3 text-start">
+        <label>Dog's Size:</label>
+        <select name="size" #dogSize class="form-select">
+        <option value="small">Small</option>    
+        <option value="medium">Medium</option>    
+        <option value="big">big</option>    
+        </select>
+        <!-- <div *ngIf="dogSize. && dogSize.invalid" class="text-danger text-start">Enter valid Birthday</div> -->
+      </div>
+
+      <div class="mt-3 text-start">
+        <select name="gender" id="" #dogGender class="form-select">
+        <option value="male">Male</option>    
+        <option value="female">Female</option>    
+        </select>
+        <!-- <div *ngIf="dogSize. && dogSize.invalid" class="text-danger text-start">Enter valid Birthday</div> -->
+      </div>
+
+<div>
+  <textarea name="description" id="" cols="30" rows="5" #description class="form-control mt-3" style="resize: none;"></textarea>
+</div>
+
+      <div>
+        <input name="image" #inputImage="ngModel" ngModel type="text" class="form-control mt-3" placeholder="City..."
+          required minlength="3">
+        <div *ngIf="inputImage.touched && inputImage.invalid" class="text-danger text-start">Enter a valid Image</div>
+      </div>
+      <div>
+        <button class="btn btn-warning w-100 mt-3">Save Me</button>
+      </div>
+      <div class="mt-5">
+        <br>
+        PetMe © 2021 - 2022
+      </div>
+    </form>
+  </div>
+</div>

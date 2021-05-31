@@ -33,6 +33,7 @@
 .upperHeader{
   height: 45px !important;
   position: fixed;
+  z-index: 10;
 }
 
 nav { 
