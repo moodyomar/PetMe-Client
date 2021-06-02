@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from './api.service';
 
 @Injectable({
@@ -6,14 +7,17 @@ import { ApiService } from './api.service';
 })
 export class UsersService {
 
-  constructor(private apiSer: ApiService) { }
+  constructor(private apiSer: ApiService,private router:Router) { }
 
   login(_loginData: any):void {
     let _url = 'http://localhost:3000/users/login'
     this.apiSer.postApiRequest(_url, _loginData).subscribe((resp:any) => {
       console.log(resp)
     localStorage.setItem("tok",resp.token)
+    // toastify
+this.router.navigate(["/addDogs"])
     },(rej:any)=> {
+      alert(rej.error)
       console.log(rej)
     })
 
@@ -24,7 +28,7 @@ export class UsersService {
       console.log(resp)
     },(rej:any)=> {
       console.log(rej)
-      alert(rej.error.err)
+      alert(rej.error)
     })
 
   }

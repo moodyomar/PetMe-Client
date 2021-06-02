@@ -15,27 +15,31 @@ export class AddDogsComponent implements OnInit {
 
 
 onSub() {
-  console.log(this.myForm.form.value);
   let _dogDetails = this.myForm.form.value
   let result = {user:"test test",message:"test",code:"test"}
   console.log(_dogDetails)
-  if(result.user) {
-    // Todo add new record
-    // this.dogsSer.addNewDog(_dogDetails);
-
-    // this.router.navigate(["/login"])
-    // setTimeout(() => {
-    //   window.location.reload();
-    // },400)
-
+  if(this.myForm.form.status == "VALID"){
+    if(result.user) {
+      // Todo add new record
+      // this.dogsSer.addNewDog(_dogDetails);
+  
+      // this.router.navigate(["/login"])
+      // setTimeout(() => {
+      //   window.location.reload();
+      // },400)
+  console.log(result.user)
+    }
+    if(result.code){
+      console.log(result)
+    }
+  }else{
+    alert("please fill out every little detail correctly about the dog")
   }
-  if(result.code){
-    console.log(result.message)
-  }
+
   // result.user -> success
   // result.code -> problem
   return result;
-  //TODO: also add new record in db of firebase
+  //TODO: also add new record in db 
 }
 
 }
