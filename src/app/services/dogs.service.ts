@@ -25,7 +25,13 @@ export class DogsService {
 addNewDog(_dog:any):void{
   // not completed !
   let _url = 'http://localhost:3000/dogs/'
-  this.apiSer.authPostRequest(_url,_dog)
+  this.apiSer.authPostRequest(_url,_dog).subscribe((resp:any) => {
+    console.log(resp)
+  },(rej:any)=> {
+    console.log(rej)
+    alert(rej.error)
+  })
+
 }
 
 }

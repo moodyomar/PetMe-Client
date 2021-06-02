@@ -20,7 +20,7 @@
           Contact</a>
         <a routerLink="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>
           Login</a>
-        <a routerLink="/signup"><i class="fa fa-user-plus" aria-hidden="true"></i>
+        <a *ngIf=""routerLink="/signup"><i class="fa fa-user-plus" aria-hidden="true"></i>
           Sign Up</a>
       </nav>
       <div class="mobileMenu" (click)="toggleClass()"><i class="fa fa-bars fs-2" aria-hidden="true"></i>

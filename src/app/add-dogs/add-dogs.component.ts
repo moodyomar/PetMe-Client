@@ -21,7 +21,7 @@ onSub() {
   if(this.myForm.form.status == "VALID"){
     if(result.user) {
       // Todo add new record
-      // this.dogsSer.addNewDog(_dogDetails);
+      this.dogsSer.addNewDog(_dogDetails);
   
       // this.router.navigate(["/login"])
       // setTimeout(() => {
