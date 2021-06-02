@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
+import { ToastService, AngularToastifyModule } from 'angular-toastify'; 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -24,15 +25,17 @@ import { AddDogsComponent } from './add-dogs/add-dogs.component';
     ContactusComponent,
     DogsListComponent,
     HomeComponent,
-    AddDogsComponent
+    AddDogsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularToastifyModule
+    
   ],
-  providers: [],
+  providers: [ToastService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

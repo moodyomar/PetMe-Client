@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ToastService } from 'angular-toastify';
 import { ApiService } from '../services/api.service';
 import { UsersService } from '../services/users.service';
+
 
 @Component({
   selector: 'app-login',
@@ -8,8 +10,11 @@ import { UsersService } from '../services/users.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+
+
   @ViewChild('f') myForm: any
-  constructor(private usersSer:UsersService) { }
+  constructor(private usersSer:UsersService,private toastService: ToastService) { }
 
   ngOnInit(): void {
   }
