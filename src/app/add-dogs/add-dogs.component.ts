@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { DogsService } from '../services/dogs.service';
+import { ToastifyService } from '../services/toastify.service';
 
 @Component({
   selector: 'app-add-dogs',
@@ -8,9 +10,12 @@ import { DogsService } from '../services/dogs.service';
 })
 export class AddDogsComponent implements OnInit {
   @ViewChild("f") myForm:any
-  constructor(private dogsSer:DogsService) { }
+  constructor(private dogsSer:DogsService,private router:Router,private toast:ToastifyService) { }
   
   ngOnInit(): void {
+    if(!localStorage["tok"]){
+      this.router.navigate(["/login"])
+    }
   }
 
 
@@ -22,18 +27,16 @@ onSub() {
     if(result.user) {
       // Todo add new record
       this.dogsSer.addNewDog(_dogDetails);
-  
-      // this.router.navigate(["/login"])
-      // setTimeout(() => {
-      //   window.location.reload();
-      // },400)
+      setTimeout(() => {
+        this.router.navigate(["/dogs"])
+      },400)
   console.log(result.user)
     }
     if(result.code){
       console.log(result)
     }
   }else{
-    alert("please fill out every little detail correctly about the dog")
+    this.toast.showError("please fill out every little detail correctly about the dog","Error")
   }
 
   // result.user -> success

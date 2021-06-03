@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ToastService } from 'angular-toastify';
-import { ApiService } from '../services/api.service';
+import { Router } from '@angular/router';
 import { UsersService } from '../services/users.service';
 
 
@@ -14,9 +13,12 @@ export class LoginComponent implements OnInit {
 
 
   @ViewChild('f') myForm: any
-  constructor(private usersSer:UsersService,private toastService: ToastService) { }
+  constructor(private usersSer:UsersService,private router:Router) { }
 
   ngOnInit(): void {
+    if(localStorage["tok"]){
+      this.router.navigate(["/"])
+    }
   }
 
   onSub() {

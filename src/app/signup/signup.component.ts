@@ -21,10 +21,9 @@ export class SignupComponent implements OnInit {
     if(result.user) {
       // Todo add new record
     this.usersSer.signUp(user);
-      // this.router.navigate(["/login"])
-      // setTimeout(() => {
-      //   window.location.reload();
-      // },400)
+    setTimeout(() => {
+      this.router.navigate(["/login"])
+      },400)
 
     }
     if(result.code){

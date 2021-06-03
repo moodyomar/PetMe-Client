@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   classApplied = false;
+  isLoggedIn = true;
 
   toggleClass() {
     this.classApplied = !this.classApplied;
@@ -15,6 +16,14 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    if (localStorage["tok"]) {
+      this.isLoggedIn = false;
+    }
   }
+
+logOut():void{
+  localStorage.removeItem("tok")
+  window.location.reload()
+}
 
 }

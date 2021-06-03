@@ -18,10 +18,13 @@
           Dogs</a>
         <a routerLink="/contact" [routerLinkActive]="'active'"><i class="fa fa-envelope" aria-hidden="true"></i>
           Contact</a>
-        <a routerLink="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>
+        <a *ngIf="isLoggedIn" routerLink="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>
           Login</a>
-        <a *ngIf=""routerLink="/signup"><i class="fa fa-user-plus" aria-hidden="true"></i>
+        <a *ngIf="isLoggedIn" routerLink="/signup"><i class="fa fa-user-plus" aria-hidden="true"></i>
           Sign Up</a>
+        <a (click)="logOut()" *ngIf="!isLoggedIn" routerLink="/"><i class="fa fa-sign-out" aria-hidden="true"></i>
+
+          Logout</a>
       </nav>
       <div class="mobileMenu" (click)="toggleClass()"><i class="fa fa-bars fs-2" aria-hidden="true"></i>
       </div>

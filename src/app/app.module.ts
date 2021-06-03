@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
-
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import { ToastService, AngularToastifyModule } from 'angular-toastify'; 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -14,6 +14,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { DogsListComponent } from './dogsList/dogs-list.component';
 import { HomeComponent } from './home/home.component';
 import { AddDogsComponent } from './add-dogs/add-dogs.component';
+
 
 @NgModule({
   declarations: [
@@ -32,10 +33,15 @@ import { AddDogsComponent } from './add-dogs/add-dogs.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    AngularToastifyModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass :'toast-top-right',
+      timeOut:1500,
+      progressBar:true
+    })
     
   ],
-  providers: [ToastService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
