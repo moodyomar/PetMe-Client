@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-
   constructor(private http: HttpClient) { }
 
   getApiRequest(_url: any): any {
@@ -29,7 +28,6 @@ export class ApiService {
     return this.http.post(_url, _postBody);
 
   }
-
 
 
   // getHeader(_url:any,_body:any):any{

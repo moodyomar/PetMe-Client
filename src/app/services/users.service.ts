@@ -20,7 +20,7 @@ export class UsersService {
     // toastify
 setTimeout(() => {
   // window.location.reload()
-  this.router.navigate(["/addDogs"])
+  this.router.navigate(["/admin"])
 }, 1000);
 
     },(rej:any)=> {

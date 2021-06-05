@@ -14,6 +14,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { DogsListComponent } from './dogsList/dogs-list.component';
 import { HomeComponent } from './home/home.component';
 import { AddDogsComponent } from './add-dogs/add-dogs.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { AddDogsComponent } from './add-dogs/add-dogs.component';
     DogsListComponent,
     HomeComponent,
     AddDogsComponent,
+    AdminPanelComponent,
   ],
   imports: [
     BrowserModule,

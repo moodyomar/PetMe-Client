@@ -6,6 +6,7 @@ import { SignupComponent } from './signup/signup.component';
 import { DogsListComponent } from './dogsList/dogs-list.component';
 import { HomeComponent } from './home/home.component';
 import { AddDogsComponent } from './add-dogs/add-dogs.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 const routes: Routes = [
   {path:"", component:HomeComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:"login", component:LoginComponent},
   {path:"addDogs",component:AddDogsComponent},
   {path:"signup", component:SignupComponent},
+  {path:"admin", component:AdminPanelComponent},
 ];
 
 @NgModule({
