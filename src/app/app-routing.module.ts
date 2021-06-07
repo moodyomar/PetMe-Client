@@ -7,14 +7,16 @@ import { DogsListComponent } from './dogsList/dogs-list.component';
 import { HomeComponent } from './home/home.component';
 import { AddDogsComponent } from './add-dogs/add-dogs.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { EditDogsComponent } from './edit-dogs/edit-dogs.component';
 
 const routes: Routes = [
   {path:"", component:HomeComponent},
   {path:"dogs", component:DogsListComponent},
   {path:"contact", component:ContactusComponent},
   {path:"login", component:LoginComponent},
-  {path:"addDogs",component:AddDogsComponent},
   {path:"signup", component:SignupComponent},
+  {path:"addDogs",component:AddDogsComponent},
+  {path:"editDogs/:id",component:EditDogsComponent},
   {path:"admin", component:AdminPanelComponent},
 ];
 

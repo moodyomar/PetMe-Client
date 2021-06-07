@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-header',
@@ -7,23 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   classApplied = false;
-  isLoggedIn = true;
+  isLoggedIn:boolean = false;
 
   toggleClass() {
     this.classApplied = !this.classApplied;
   }
 
-  constructor() { }
+  constructor(private userSer: UsersService) { }
 
   ngOnInit(): void {
+    
+  }
+
+  ngDoCheck(): void {
     if (localStorage["tok"]) {
+      this.isLoggedIn = true;
+      this.userSer.isLoggedIn = true;
+    } else {
       this.isLoggedIn = false;
     }
   }
 
+
 logOut():void{
-  localStorage.removeItem("tok")
-  window.location.reload()
+  this.userSer.logOut()
 }
 
 }

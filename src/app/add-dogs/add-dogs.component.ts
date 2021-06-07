@@ -13,11 +13,14 @@ export class AddDogsComponent implements OnInit {
   constructor(private dogsSer:DogsService,private router:Router,private toast:ToastifyService) { }
   
   ngOnInit(): void {
+
+  }
+
+  ngDoCheck(): void {
     if(!localStorage["tok"]){
       this.router.navigate(["/login"])
     }
   }
-
 
 onSub() {
   let _dogDetails = this.myForm.form.value
@@ -25,7 +28,6 @@ onSub() {
   console.log(_dogDetails)
   if(this.myForm.form.status == "VALID"){
     if(result.user) {
-      // Todo add new record
       this.dogsSer.addNewDog(_dogDetails);
       setTimeout(() => {
         this.router.navigate(["/dogs"])

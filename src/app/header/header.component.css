@@ -10,24 +10,26 @@
 }
 
 .mobileMenu,
-.logIn {
+.adminPhone {
   display: none;
 }
 
 @media screen and (max-width: 992px) {
-
+  .adminDesktop{
+    display: none !important;
+  }
   .mobileMenu,
-  .logIn {
+  .adminPhone {
     display: block;
   }
 
   .mobileMenu a,
-  .logIn a {
+  .adminPhone a {
     color: #fff;
   }
 
   .mobileMenu:active,
-  .logIn a:active {
+  .adminPhone a:active {
     color: #FFC009;
   }
 .upperHeader{

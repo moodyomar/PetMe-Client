@@ -15,6 +15,7 @@ import { DogsListComponent } from './dogsList/dogs-list.component';
 import { HomeComponent } from './home/home.component';
 import { AddDogsComponent } from './add-dogs/add-dogs.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { EditDogsComponent } from './edit-dogs/edit-dogs.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     HomeComponent,
     AddDogsComponent,
     AdminPanelComponent,
+    EditDogsComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,7 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      positionClass :'toast-top-right',
+      positionClass :'toast-top-left',
       timeOut:1500,
       progressBar:true
     })

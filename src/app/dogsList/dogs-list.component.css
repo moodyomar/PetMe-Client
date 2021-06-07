@@ -17,3 +17,10 @@ background-color: #212529 !important;
   border: none;
   outline: none;
   }
+  .ngBackground{
+    width: 100%;
+    height: 200px;
+background-size: cover;
+background-position: center;
+
+  }

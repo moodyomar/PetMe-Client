@@ -9,37 +9,43 @@ import { ToastifyService } from './toastify.service';
 })
 export class UsersService {
 
-  constructor(private apiSer: ApiService,private router:Router,private toast:ToastifyService) { }
+  isLoggedIn: any;
+  userInfo: any = {};
 
-  login(_loginData: any):void {
-    let _url = 'http://localhost:3000/users/login'
-    this.apiSer.postApiRequest(_url, _loginData).subscribe((resp:any) => {
+  constructor(private apiSer: ApiService, private router: Router, private toast: ToastifyService) { }
+
+  login(_loginData: any): void {
+    let _url = `${this.apiSer.API_URL}/users/login`
+    this.apiSer.postApiRequest(_url, _loginData).subscribe((resp: any) => {
       console.log(resp)
-      this.toast.showSuccess("Logged in Successfully","Success")
-    localStorage.setItem("tok",resp.token)
-    // toastify
-setTimeout(() => {
-  // window.location.reload()
-  this.router.navigate(["/admin"])
-}, 1000);
+      localStorage.setItem("tok", resp.token)
+      this.toast.showSuccess("Logged in Successfully", "Success")
+      setTimeout(() => {
+        this.router.navigate(["/admin"])
+      }, 1000);
 
-    },(rej:any)=> {
-      this.toast.showError("Wrong email or Password !","Error")
+    }, (rej: any) => {
+      this.toast.showError("Please try again or come back later", "Wrong email or Password")
       console.log(rej)
     })
-
   }
-  signUp(_signUpData:any):void{
-    let _url = 'http://localhost:3000/users/'
-    this.apiSer.postApiRequest(_url, _signUpData).subscribe((resp:any) => {
-      this.toast.showSuccess("You've Signed up Successfully","Welcome")
+
+
+  signUp(_signUpData: any): void {
+    let _url = `${this.apiSer.API_URL}/users/`
+    this.apiSer.postApiRequest(_url, _signUpData).subscribe((resp: any) => {
+      this.toast.showSuccess("You've signed up Successfully", "Welcome to PetMe")
       console.log(resp)
-    },(rej:any)=> {
-      this.toast.showError("Please fill out the details correctly !","Error")
-      console.log(rej)
-      alert(rej.error)
+    }, (rej: any) => {
+      if (rej.error.code == 11000) {
+        this.toast.showError("Please make sure that the details are correct and not int he system", "Something went wrong")
+      }
     })
-
   }
-
+  logOut():void{
+    localStorage.removeItem("tok")
+    this.toast.showWarning("Logged out", "See you soon!")
+    this.router.navigate(['/login'])
+  }
 }
+

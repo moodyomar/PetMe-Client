@@ -6,9 +6,10 @@
 </div>
 
 
-<div class="row ms-5">
+<div class="row d-flex justify-content-center">
   <div class="card shadow hoverable m-4 " style="width: 18rem;" *ngFor="let dog of dogs_ar">
-    <img src="{{dog.image}}" class="card-img-top" alt="...">
+    <!-- <img src="{{dog.image}}" class="card-img-top" alt="..."> -->
+    <div [ngStyle]="{'background-image': 'url(' + dog.image || '../../images.noImg.jpg' + ')'}" class="card-img-top ngBackground" alt="..."></div>
     <div class="card-body">
       <h5 class="card-title text-center">{{dog.name}}</h5>
       <p class="card-text text-center">{{dog.description}}</p>

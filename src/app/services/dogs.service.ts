@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from './api.service';
 import { ToastifyService } from './toastify.service';
 
@@ -8,10 +9,23 @@ import { ToastifyService } from './toastify.service';
 })
 export class DogsService {
   dogs_ar: any[] = [];
-  constructor(private apiSer: ApiService,private toast:ToastifyService) { }
+  API_URL:string = this.apiSer.API_URL
+  dogDetailsObj:any = {}
+
+  constructor(private apiSer: ApiService,private toast:ToastifyService,private router:Router) { }
 
   getDogs(): any {
     return this.dogs_ar;
+  }
+
+  getDogDetails(url:any):void{
+    this.apiSer.authGetRequest(url).subscribe((res:any)=>{
+      console.log(res)
+      for (let key in res){
+        this.dogDetailsObj[key] = res[key]
+      }
+      console.log(this.dogDetailsObj)
+    })
   }
 
   doApiList(_url: any): void {
@@ -25,7 +39,7 @@ export class DogsService {
 
 addNewDog(_dog:any):void{
   // not completed !
-  let _url = 'http://localhost:3000/dogs/'
+  let _url = `${this.apiSer.API_URL}/dogs/`
   this.apiSer.authPostRequest(_url,_dog).subscribe((resp:any) => {
     console.log(resp)
     this.toast.showInfo("Dog's Added !","Welcome")
@@ -35,6 +49,17 @@ addNewDog(_dog:any):void{
 
     alert(rej.error)
   })
-
 }
+
+editExistedDog(url:any, _bodyData:any){
+  this.apiSer.putApiRequest(url, _bodyData).subscribe((resp:any)=>{
+    console.log(resp);
+    this.toast.showInfo("Dog details were successfully updated", "")
+    setTimeout(()=>{
+      this.router.navigate(['/dogs'])
+    },400)
+   
+  })
+}
+
 }
