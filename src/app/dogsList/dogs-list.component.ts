@@ -16,7 +16,7 @@ export class DogsListComponent implements OnInit {
   ngOnInit(): void {
 // this.dogs_ar = dogs_ar_json
 this.dogs_ar = this.dogsSer.getDogs();
-let url = `http://localhost:3000/dogs`
+let url = `${this.apiSer.API_URL}/dogs/`
 this.dogsSer.doApiList(url)
   }
 
