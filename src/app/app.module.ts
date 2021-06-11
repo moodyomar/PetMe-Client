@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { AddDogsComponent } from './add-dogs/add-dogs.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { EditDogsComponent } from './edit-dogs/edit-dogs.component';
+import { HeadingComponent } from './common/heading/heading.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { EditDogsComponent } from './edit-dogs/edit-dogs.component';
     AddDogsComponent,
     AdminPanelComponent,
     EditDogsComponent,
+    HeadingComponent,
   ],
   imports: [
     BrowserModule,
