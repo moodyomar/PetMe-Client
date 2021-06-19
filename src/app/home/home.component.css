@@ -43,3 +43,50 @@ opacity: 1 !important;
   background-image: url('https://images.pexels.com/photos/2053922/pexels-photo-2053922.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
   background-size: cover;
 }
+.ServicesBgImage{
+  background-image: url('../../assets/images/services.jpg');
+  background-size: cover;
+  min-height: 200px;
+}
+
+.customLi{
+  height: 65px;
+cursor: pointer;
+font-size: 1.2em;
+}
+
+.customLi:hover,.customLi:active{
+background-color: #ECB61A;
+}
+.customLi.active{
+  background-color: #ECB61A;
+}
+.customBar{
+  height: 250px;
+}
+.ngBackground{
+  width: 100%;
+  height: 200px;
+background-size: cover;
+background-position: center;
+}
+
+.customPetmeBtn:hover{
+  color: #212529 !important;
+  background-color: #FFC009 !important;
+  border: none;
+  outline: none;
+  }
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+
+}
+
+@media(hover: hover) and (max-width: 992px) {
+  .hoverable:active .showOnHover,.hoverable:focus .showOnHover{
+    opacity: 1;
+  }
+  .hoverable:active .blackOverlay,.hoverable:focus .blackOverlay{
+    opacity: 0.7;
+  }
+}

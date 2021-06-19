@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {dogs_ar_json} from "../data/sample"
+// import {dogs_ar_json} from "../data/sample"
 import { ApiService } from '../services/api.service';
 import { DogsService } from '../services/dogs.service';
 
@@ -9,12 +9,11 @@ import { DogsService } from '../services/dogs.service';
   styleUrls: ['./dogs-list.component.css']
 })
 export class DogsListComponent implements OnInit {
-  dogs_ar:any[] = dogs_ar_json;
+  dogs_ar:any[] = [];
   constructor(private apiSer:ApiService,private dogsSer:DogsService) { }
 
 
   ngOnInit(): void {
-// this.dogs_ar = dogs_ar_json
 this.dogs_ar = this.dogsSer.getDogs();
 let url = `${this.apiSer.API_URL}/dogs/`
 this.dogsSer.doApiList(url)

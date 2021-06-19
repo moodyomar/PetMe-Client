@@ -8,11 +8,10 @@
 
 <div class="row d-flex justify-content-center">
   <div class="card shadow hoverable m-4 " style="width: 18rem;" *ngFor="let dog of dogs_ar">
-    <!-- <img src="{{dog.image}}" class="card-img-top" alt="..."> -->
     <div [ngStyle]="{'background-image': 'url(' + dog.image || '../../images.noImg.jpg' + ')'}" class="card-img-top ngBackground" alt="..."></div>
     <div class="card-body">
       <h5 class="card-title text-center">{{dog.name}}</h5>
-      <p class="card-text text-center">{{dog.description}}</p>
+      <p class="card-text text-center">{{dog.description.substr(0,100)}}...</p>
       <div class="d-flex justify-content-evenly">
         <span class="badge bg-warning text-dark customBadge"><i class="fa fa-birthday-cake" aria-hidden="true"></i>
           {{dog.age}} y.o</span>
