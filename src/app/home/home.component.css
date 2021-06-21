@@ -79,7 +79,10 @@ background-position: center;
   }
 /* On screens that are 992px or less, set the background color to blue */
 @media screen and (max-width: 992px) {
-
+.customBar{
+  display: grid !important;
+  grid-template-columns: repeat(2,1fr);
+}
 }
 
 @media(hover: hover) and (max-width: 992px) {

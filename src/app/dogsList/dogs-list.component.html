@@ -11,7 +11,7 @@
     <div [ngStyle]="{'background-image': 'url(' + dog.image || '../../images.noImg.jpg' + ')'}" class="card-img-top ngBackground" alt="..."></div>
     <div class="card-body">
       <h5 class="card-title text-center">{{dog.name}}</h5>
-      <p class="card-text text-center">{{dog.description.substr(0,100)}}...</p>
+      <p class="card-text text-center">{{dog.description.substr(0,110)}}...</p>
       <div class="d-flex justify-content-evenly">
         <span class="badge bg-warning text-dark customBadge"><i class="fa fa-birthday-cake" aria-hidden="true"></i>
           {{dog.age}} y.o</span>

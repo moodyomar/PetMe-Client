@@ -52,7 +52,7 @@
         <li class="list-group-item customLi"><i class="fa fa-medkit" aria-hidden="true"></i> Vet Visits</li>
       </ul>
     </div>
-    <div class="col-md-6 bg-light p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore vero error minima
+    <div class="col-md-6 bg-light p-3 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore vero error minima
       fugit pariatur totam.</div>
   </div>
 </section>
@@ -61,28 +61,28 @@
 <section>
   <div class="container-fluid my-5">
     <div class="row bg-dark text-white text-center customBar d-flex align-items-center">
-      <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="col-md-3 col-sm-6 ">
         <div class="d-flex justify-content-center align-items-center"> <i class="fa fa-paw fs-1 me-2 mb-2"
             aria-hidden="true"></i>
           <h3>3245</h3>
         </div>
         <span>Lorem ipsum</span>
       </div>
-      <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="col-md-3 col-sm-6 ">
         <div class="d-flex justify-content-center align-items-center"> <i class="fa fa-paw fs-1 me-2 mb-2"
           aria-hidden="true"></i>
         <h3>3245</h3>
       </div>
       <span>Lorem ipsum</span>
       </div>
-      <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="col-md-3 col-sm-6 ">
         <div class="d-flex justify-content-center align-items-center"> <i class="fa fa-paw fs-1 me-2 mb-2"
           aria-hidden="true"></i>
         <h3>3245</h3>
       </div>
       <span>Lorem ipsum</span>
       </div>
-      <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="col-md-3 col-sm-6 ">
         <div class="d-flex justify-content-center align-items-center"> <i class="fa fa-paw fs-1 me-2 mb-2"
           aria-hidden="true"></i>
         <h3>3245</h3>
@@ -106,7 +106,7 @@
       <div [ngStyle]="{'background-image': 'url(' + dog.image || '../../images.noImg.jpg' + ')'}" class="card-img-top ngBackground" alt="..."></div>
       <div class="card-body">
         <h5 class="card-title text-center">{{dog.name}}</h5>
-        <p class="card-text text-center">{{dog.description.substr(0,70)}}...</p>
+        <p class="card-text text-center">{{dog.description.substr(0,60)}}....</p>
         <div class="d-flex justify-content-evenly">
           <span class="badge bg-warning text-dark customBadge"><i class="fa fa-birthday-cake" aria-hidden="true"></i>
             {{dog.age}} y.o</span>
