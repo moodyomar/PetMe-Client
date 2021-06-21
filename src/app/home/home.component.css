@@ -83,6 +83,12 @@ background-position: center;
   display: grid !important;
   grid-template-columns: repeat(2,1fr);
 }
+.hoverable{
+  opacity: 1;
+}
+.blackOverlay{
+opacity: 0.5;
+}
 }
 
 @media(hover: hover) and (max-width: 992px) {
