@@ -9,7 +9,7 @@ import { DogsService } from '../services/dogs.service';
 })
 export class SearchNsortComponent implements OnInit {
 searchQ:any = '';
-sortSelect = 'likes'
+sortSelect = 'age'
   constructor(private dogsSer:DogsService,private apiSer:ApiService) { }
 
   ngOnInit(): void {
