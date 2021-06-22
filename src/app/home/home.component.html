@@ -47,12 +47,24 @@
     <div class="col-md-3 ServicesBgImage"></div>
     <div class="col-md-3">
       <ul class="list-group">
-        <li class="list-group-item customLi"><i class="fa fa-stethoscope" aria-hidden="true"></i> immune system</li>
-        <li class="list-group-item customLi"><i class="fa fa-paw" aria-hidden="true"></i> Pet Food</li>
-        <li class="list-group-item customLi"><i class="fa fa-medkit" aria-hidden="true"></i> Vet Visits</li>
+        <li (click)="show('immuneSystem')"
+        [class.customLiClicked]="isImmuneSystem"
+        class="list-group-item customLi"><i class="fa fa-stethoscope" aria-hidden="true"></i> immune system</li>
+
+        <li (click)="show('petFood')" 
+        [class.customLiClicked]="isPetFood"
+        class="list-group-item customLi"><i class="fa fa-paw" aria-hidden="true"></i> Pet Food</li>
+
+        <li (click)="show('vetVisits')" 
+        [class.customLiClicked]="isVetVisits"
+        class="list-group-item customLi"><i class="fa fa-medkit" aria-hidden="true"></i> Vet Visits</li>
       </ul>
     </div>
-    <div class="col-md-6 bg-light p-3 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore vero error minima
+    <div class="col-md-6 bg-light p-3 mt-2" *ngIf="isImmuneSystem">Immune System dolor sit amet consectetur adipisicing elit. Dolore vero error minima
+      fugit pariatur totam.</div>
+    <div class="col-md-6 bg-light p-3 mt-2" *ngIf="isPetFood" >Pet Food dolor sit amet consectetur adipisicing elit. Dolore vero error minima
+      fugit pariatur totam.</div>
+    <div class="col-md-6 bg-light p-3 mt-2" *ngIf="isVetVisits">Vet Visits dolor sit amet consectetur adipisicing elit. Dolore vero error minima
       fugit pariatur totam.</div>
   </div>
 </section>

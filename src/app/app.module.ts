@@ -17,6 +17,7 @@ import { AddDogsComponent } from './add-dogs/add-dogs.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { EditDogsComponent } from './edit-dogs/edit-dogs.component';
 import { HeadingComponent } from './common/heading/heading.component';
+import { SearchNsortComponent } from './search-nsort/search-nsort.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { HeadingComponent } from './common/heading/heading.component';
     AdminPanelComponent,
     EditDogsComponent,
     HeadingComponent,
+    SearchNsortComponent,
   ],
   imports: [
     BrowserModule,

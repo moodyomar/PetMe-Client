@@ -58,6 +58,9 @@ font-size: 1.2em;
 .customLi:hover,.customLi:active{
 background-color: #ECB61A;
 }
+.customLiClicked{
+  background-color: #ECB61A;
+}
 .customLi.active{
   background-color: #ECB61A;
 }

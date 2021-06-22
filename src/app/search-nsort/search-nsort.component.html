@@ -1,0 +1,15 @@
+<div class="row my-3">
+  <div class="d-flex justify-content-around">
+    <div class="sort">
+<select name="" id="" class="form-select" [(ngModel)]="sortSelect" (change)="onSortChange()">
+  <option value="age">Age</option>
+  <option value="size">Size</option>
+  <option value="gender">Gender</option>
+</select>
+    </div>
+  <div class="search d-flex">
+<input type="text" class="form-control w-75 me-2" placeholder="Search by breed..." [(ngModel)]="searchQ">
+<div (click)="onDogSearch()" class="btn btn-dark">Search</div>
+  </div>
+  </div>
+</div>
