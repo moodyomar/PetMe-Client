@@ -7,7 +7,7 @@
 <app-search-nsort></app-search-nsort>
 
 <div class="row d-flex justify-content-center">
-  <div class="card shadow hoverable m-4 " style="width: 18rem;" *ngFor="let dog of dogs_ar_json">
+  <div class="card shadow hoverable m-4 " style="width: 18rem;" *ngFor="let dog of dogs_ar">
     <div [ngStyle]="{'background-image': 'url(' + dog.image || '../../images.noImg.jpg' + ')'}" class="card-img-top ngBackground" alt="..."></div>
     <div class="card-body">
       <h5 class="card-title text-center">{{dog.name}}</h5>

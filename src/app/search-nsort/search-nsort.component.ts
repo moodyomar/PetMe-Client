@@ -17,11 +17,12 @@ sortSelect = 'age'
 
   onDogSearch():void{
 console.log(this.searchQ)
+this.dogsSer.searchQ = this.searchQ;
   }
 
     onSortChange(){
     console.log(this.sortSelect)
-    let url = `${this.apiSer.API_URL}/dogs/.. not completed`
+    let url = `${this.apiSer.API_URL}/dogs`
     this.dogsSer.doApiList(url,this.sortSelect)  
   }
 

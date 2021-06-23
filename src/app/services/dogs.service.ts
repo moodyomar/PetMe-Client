@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-// import {sortBy} from 'lodash'
+import {sortBy} from 'lodash'
 import { ApiService } from './api.service';
 import { ToastifyService } from './toastify.service';
 
@@ -10,8 +10,9 @@ import { ToastifyService } from './toastify.service';
 })
 export class DogsService {
   dogs_ar: any[] = [];
-  API_URL:string = this.apiSer.API_URL
-  dogDetailsObj:any = {}
+  API_URL:string = this.apiSer.API_URL;
+  dogDetailsObj:any = {};
+  searchQ:any;
 
   constructor(private apiSer: ApiService,private toast:ToastifyService,private router:Router) { }
 
@@ -33,11 +34,10 @@ export class DogsService {
     this.dogs_ar.splice(0, this.dogs_ar.length)
     this.apiSer.getApiRequest(_url).subscribe((data: any) => {
       this.dogs_ar.push(...data);
-      // let temp_ar = sortBy(this.dogs_ar, _sortQ);
-      // this.dogs_ar.splice(0, this.dogs_ar.length);
-      // this.dogs_ar.push(...temp_ar);
+      let temp_ar = sortBy(this.dogs_ar, _sortQ);
+      this.dogs_ar.splice(0, this.dogs_ar.length);
+      this.dogs_ar.push(...temp_ar);
       this.dogs_ar.reverse()
-      console.table(this.dogs_ar)
     })
   }
 

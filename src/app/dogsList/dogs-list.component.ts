@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {dogs_ar_json} from "../data/sample"
+// import {dogs_ar_json} from "../data/sample"
 import { ApiService } from '../services/api.service';
 import { DogsService } from '../services/dogs.service';
 
@@ -10,7 +10,7 @@ import { DogsService } from '../services/dogs.service';
 })
 export class DogsListComponent implements OnInit {
   dogs_ar:any[] = [];
-  dogs_ar_json:any = dogs_ar_json;
+  // dogs_ar_json:any = dogs_ar_json;
   constructor(private apiSer:ApiService,private dogsSer:DogsService) { }
 
 
