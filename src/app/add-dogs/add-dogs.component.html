@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="container text-center p-5">
     <h1 class="display-4 mb-5">Add a dog
-      <i class="fa fa-angle-double-up text-warning" aria-hidden="true"></i><br>
+      <br>
 
     </h1>
     <form #f="ngForm" (ngSubmit)="onSub()" class="col-lg-6 mx-auto">
@@ -35,6 +35,7 @@
       </div>
 
       <div class="mt-3 text-start">
+        <label>Dog's Gender:</label>
         <select name="gender" #dogGender="ngModel" ngModel required class="form-select">
         <option value="male">Male</option>    
         <option value="female">Female</option>    
@@ -43,11 +44,12 @@
       </div>
 
 <div>
-  <textarea name="description" id="" cols="30" rows="5" #description="ngModel" ngModel required class="form-control mt-3" style="resize: none;"></textarea>
+  <textarea name="description" id="" cols="30" rows="5" #description="ngModel" ngModel required placeholder="Please describe the dog... " class="form-control mt-3" style="resize: none;"></textarea>
 </div>
 
-      <div>
-        <input name="image" #inputImage="ngModel" ngModel type="text" class="form-control mt-3" placeholder="image..."
+<div class="mt-3 text-start">
+        <label>Dog's Image:</label>
+        <input name="image" #inputImage="ngModel" ngModel type="file" class="form-control mt-3" placeholder="image..."
            minlength="3">
         <div *ngIf="inputImage.touched && inputImage.invalid" class="text-danger text-start">Enter a valid Image</div>
       </div>

@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   }
 
   scrolldown(){
-    this.scroll.scrollToPosition([0,500])
+    this.scroll.scrollToPosition([0,450])
     console.log("triggered")
 }
 
