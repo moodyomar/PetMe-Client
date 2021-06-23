@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../services/users.service';
 
@@ -14,11 +15,16 @@ export class HeaderComponent implements OnInit {
     this.classApplied = !this.classApplied;
   }
 
-  constructor(private userSer: UsersService) { }
+  constructor(private userSer: UsersService,private scroll: ViewportScroller) { }
 
   ngOnInit(): void {
     
   }
+
+  scrolldown(){
+    this.scroll.scrollToPosition([0,500])
+    console.log("triggered")
+}
 
   ngDoCheck(): void {
     if (localStorage["tok"]) {

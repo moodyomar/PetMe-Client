@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { DogsService } from '../services/dogs.service';
@@ -14,13 +15,19 @@ export class HomeComponent implements OnInit {
   isPetFood: boolean = false;
   isVetVisits: boolean = false;
   
-  constructor(private apiSer: ApiService, private dogsSer: DogsService) { }
+  constructor(private apiSer: ApiService, private dogsSer: DogsService,private scroll: ViewportScroller) { }
 
   ngOnInit(): void {
     this.dogs_ar = this.dogsSer.getDogs();
     let url = `${this.apiSer.API_URL}/dogs/`
     this.dogsSer.doApiList(url)
   }
+
+  scrolldown(){
+    this.scroll.scrollToPosition([0,5]);
+    console.log("triggered")
+}
+
   show(_theSelected: string): void {
 
     switch (_theSelected) {
