@@ -8,7 +8,15 @@
 
 <div class="row d-flex justify-content-center">
   <div class="card shadow hoverable m-4 " style="width: 18rem;" *ngFor="let dog of dogs_ar">
-    <div [ngStyle]="{'background-image': 'url(' + dog.image || '../../images.noImg.jpg' + ')'}" class="card-img-top ngBackground" alt="..."></div>
+
+    <figure class="hover-img">
+      <div [ngStyle]="{'background-image': 'url(' + dog.image || '../../images.noImg.jpg' + ')'}" class="card-img-top ngBackground" alt="..."></div>
+      <figcaption>
+        <h4 class="hover-underline-animation">Edit</h4>
+        <h4 class="hover-underline-animation">Delete</h4>
+      </figcaption>
+    </figure>
+
     <div class="card-body">
       <h5 class="card-title text-center">{{dog.name}}</h5>
       <p class="card-text text-center">{{dog.description.substr(0,100)}}...</p>
@@ -32,3 +40,5 @@
     </div>
   </div>
 </div>
+
+
