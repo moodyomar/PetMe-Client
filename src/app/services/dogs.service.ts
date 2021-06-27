@@ -41,25 +41,32 @@ export class DogsService {
     })
   }
 
+  doApiSearch(_url:String,_searchQ:String):void{
+    this.dogs_ar.splice(0, this.dogs_ar.length)
+    this.apiSer.getApiRequest(_url).subscribe((data: any) => {
+      this.dogs_ar.push(...data);
+      let temp_ar = this.dogs_ar.filter(dogs => dogs.breed.toLowerCase() == _searchQ.toLowerCase())
+      this.dogs_ar.splice(0, this.dogs_ar.length);
+      this.dogs_ar.push(...temp_ar);
+    })
+  }
+
 
 
 addNewDog(_dog:any):void{
   // not completed !
   let _url = `${this.apiSer.API_URL}/dogs/`
   this.apiSer.authPostRequest(_url,_dog).subscribe((resp:any) => {
-    console.log(resp)
     this.toast.showInfo("Dog's Added !","Welcome")
   },(rej:any)=> {
     console.log(rej)
     this.toast.showError("please fill every little detail correctly about the dog !","Error")
-
     alert(rej.error)
   })
 }
 
 editExistedDog(url:any, _bodyData:any){
   this.apiSer.putApiRequest(url, _bodyData).subscribe((resp:any)=>{
-    console.log(resp);
     this.toast.showInfo("Dog details were successfully updated", "")
     setTimeout(()=>{
       this.router.navigate(['/dogs'])
