@@ -42,13 +42,18 @@ export class DogsService {
   }
 
   doApiSearch(_url:String,_searchQ:String):void{
-    this.dogs_ar.splice(0, this.dogs_ar.length)
+    if(_searchQ == ""){
+      this.doApiList(_url)
+    }else {
+      this.dogs_ar.splice(0, this.dogs_ar.length)
     this.apiSer.getApiRequest(_url).subscribe((data: any) => {
       this.dogs_ar.push(...data);
       let temp_ar = this.dogs_ar.filter(dogs => dogs.breed.toLowerCase() == _searchQ.toLowerCase())
       this.dogs_ar.splice(0, this.dogs_ar.length);
       this.dogs_ar.push(...temp_ar);
     })
+    }
+    
   }
 
 
