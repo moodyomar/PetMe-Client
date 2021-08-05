@@ -49,6 +49,7 @@ opacity: 1 !important;
   min-height: 200px;
 }
 
+
 .customLi{
   height: 65px;
 cursor: pointer;
@@ -92,6 +93,10 @@ background-position: center;
 .blackOverlay{
 opacity: 0.5;
 }
+.vetVisitsDesc{
+  height: 125px !important;
+}
+
 }
 
 @media(hover: hover) and (max-width: 992px) {

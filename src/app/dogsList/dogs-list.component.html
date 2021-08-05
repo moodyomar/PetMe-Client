@@ -9,11 +9,16 @@
 <div class="row d-flex justify-content-center">
   <div class="card shadow hoverable m-4 " style="width: 18rem;" *ngFor="let dog of dogs_ar">
 
-    <figure class="hover-img">
+    <figure  class="hover-img">
       <div [ngStyle]="{'background-image': 'url(' + dog.image || '../../images.noImg.jpg' + ')'}" class="card-img-top ngBackground" alt="..."></div>
-      <figcaption>
-        <h4 class="hover-underline-animation">Edit</h4>
-        <h4 class="hover-underline-animation">Delete</h4>
+      <figcaption >
+        <div class="options">
+          <h4 *ngIf="isLoggedIn" class="edit hover-underline-animation"><i class="fs-3 fa fa-pencil-square-o" aria-hidden="true"></i>
+          </h4>
+        <h4 *ngIf="isLoggedIn" class="add hover-underline-animation"><i class="fs-3 fa fa-trash-o" aria-hidden="true"></i>
+          </h4>
+          <h5 *ngIf="!isLoggedIn" class="notLoggedMsg text-warning">*Please login to Edit/delete*</h5>
+        </div>
       </figcaption>
     </figure>
 

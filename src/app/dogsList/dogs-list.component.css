@@ -73,14 +73,10 @@ figure{
   
   .hover-img figcaption {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    inset: 0;
     align-items: center;
     z-index: 1;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     line-height: 1.1em;
     opacity: 0;
@@ -92,7 +88,14 @@ figure{
     letter-spacing: 1px;
     text-transform: uppercase;
   }
-  
+  .options{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 0 10px;
+    justify-content: space-around;
+    align-items: center;
+  }
   .hover-img:hover:before,
   .hover-img:hover:after {
     transform: scale(1);
@@ -107,7 +110,6 @@ figure{
     opacity: 1;
   }
   
-  /*  */
 
   .hover-underline-animation {
     display: inline-block;
@@ -139,3 +141,20 @@ transition: all .3s ease-in;
     transform-origin: bottom left;
   }
   
+
+
+/* On screens that are 992px or less, set the background color to blue */
+
+@media screen and (max-width: 992px) {
+  .hover-img figcaption{
+opacity: 1;
+  }
+  .options{
+    justify-content: space-between;
+align-items: flex-end;
+  }
+  .notLoggedMsg{
+    display: none;
+  }
+}
+
