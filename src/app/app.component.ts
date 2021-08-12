@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as AOS from 'aos'
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
+  ngOnInit(){
+AOS.init({
+  duration: 800,
+});
+  }
 }
-
-// app.component.spec.ts אפשר למחוק

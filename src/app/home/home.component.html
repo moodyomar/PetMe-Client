@@ -6,28 +6,28 @@
     <p>Adopting Recommendations</p>
   </div>
   <div class="row mx-5 mb-5 justify-content-around">
-    <div class="col-lg-3 bgImage2 mb-5 shadow hoverable text-white py-4 px-4 text-center"
+
+    <div data-aos="fade-left" class="col-lg-3 bgImage2 mb-5 shadow hoverable text-white py-4 px-4 text-center"
       [ngStyle]="{minHeight:'280px'}">
       <div class="blackOverlay p-3">
-
         <h4 class="mb-5 pt-5">Some Title Here</h4>
         <p class="showOnHover">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur vel, magnam
           voluptates ea aut sunt?</p>
       </div>
     </div>
-    <div class="col-lg-3 bgImage mb-5 shadow hoverable text-white py-4 px-4 text-center"
+
+    <div data-aos="fade-right" class="col-lg-3 bgImage mb-5 shadow hoverable text-white py-4 px-4 text-center"
       [ngStyle]="{minHeight:'280px'}">
       <div class="blackOverlay p-3">
-
         <h4 class="mb-5 pt-5">Some Title Here</h4>
         <p class="showOnHover">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur vel, magnam
           voluptates ea aut sunt?</p>
       </div>
     </div>
-    <div class="col-lg-3 bgImage3 mb-5 shadow hoverable text-white py-4 px-4 text-center"
+
+    <div  data-aos="fade-left" class="col-lg-3 bgImage3 mb-5 shadow hoverable text-white py-4 px-4 text-center"
       [ngStyle]="{minHeight:'280px'}">
       <div class="blackOverlay p-3">
-
         <h4 class="mb-5 pt-5" id="visible">Some Title Here</h4>
         <p class="showOnHover" id="visible">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur vel,
           magnam voluptates ea aut sunt?</p>
@@ -44,7 +44,7 @@
     <p>must know when raising a dog</p>
   </div>
   <div class="row mx-5">
-    <div class="col-md-3 ServicesBgImage"></div>
+    <div  data-aos="fade-up" class="col-md-3 ServicesBgImage"></div>
     <div class="col-md-3">
       <ul class="list-group">
         <li (click)="show('immuneSystem')"
@@ -73,28 +73,36 @@
 <section>
   <div class="container-fluid my-5">
     <div class="row bg-dark text-white text-center customBar d-flex align-items-center">
-      <div class="col-md-3 col-sm-6 ">
+      <div data-aos="flip-left"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="2000" class="col-md-3 col-sm-6 ">
         <div class="d-flex justify-content-center align-items-center"> <i class="fa fa-paw fs-1 me-2 mb-2"
             aria-hidden="true"></i>
           <h3>3245</h3>
         </div>
         <span>Lorem ipsum</span>
       </div>
-      <div class="col-md-3 col-sm-6 ">
+      <div data-aos="flip-left"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="2000" class="col-md-3 col-sm-6 ">
         <div class="d-flex justify-content-center align-items-center"> <i class="fa fa-bath fs-1 me-2 mb-2"
           aria-hidden="true"></i>
         <h3>3245</h3>
       </div>
       <span>Lorem ipsum</span>
       </div>
-      <div class="col-md-3 col-sm-6 ">
+      <div data-aos="flip-left"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="2000" class="col-md-3 col-sm-6 ">
         <div class="d-flex justify-content-center align-items-center"> <i class="fa fa-medkit fs-1 me-2 mb-2"
           aria-hidden="true"></i>
         <h3>3245</h3>
       </div>
       <span>Lorem ipsum</span>
       </div>
-      <div class="col-md-3 col-sm-6 ">
+      <div data-aos="flip-left"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="2000" class="col-md-3 col-sm-6 ">
         <div class="d-flex justify-content-center align-items-center"> <i class="fa fa-blind fs-1 me-2 mb-2"
           aria-hidden="true"></i>
         <h3>3245</h3>
@@ -113,7 +121,8 @@
     <p>dreaming of saving and adobting a lovely pet?</p>
   </div>
   <div class="row d-flex justify-content-center">
-    <div class="card shadow hoverable m-4 " style="width: 18rem;" *ngFor="let dog of dogs_ar.reverse()| slice:0:4;
+    <div data-aos="zoom-out-up"
+     class="card shadow hoverable m-4 " style="width: 18rem;" *ngFor="let dog of dogs_ar.reverse()| slice:0:4;
     ">
       <div [ngStyle]="{'background-image': 'url(' + dog.image || '../../images.noImg.jpg' + ')'}" class="card-img-top ngBackground" alt="..."></div>
       <div class="card-body">
