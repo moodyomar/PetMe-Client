@@ -13,9 +13,8 @@ export class EditDogsComponent implements OnInit {
   constructor(private dogsSer:DogsService, private route:ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
-    // let idEdit = this.route.snapshot.paramMap.get('id');
-    let id = '60be00a8d7be21131961d33a'
-    let url = `${this.dogsSer.API_URL}/dogs/${id}`
+    let idEdit = this.route.snapshot.paramMap.get('id');
+    let url = `${this.dogsSer.API_URL}/dogs/single/${idEdit}`
     this.dogsSer.getDogDetails(url);
     this.dogDetailsObj = this.dogsSer.dogDetailsObj
     console.log(this.dogDetailsObj)
@@ -29,11 +28,12 @@ export class EditDogsComponent implements OnInit {
   }
   
   editDog(){
-      let idEdit = this.route.snapshot.paramMap.get('id');
+      let idEdit = this.route.snapshot.params['id'];
       let url = `${this.dogsSer.API_URL}/dogs/${idEdit}`;
-      console.log(idEdit)
       if (this.myForm.form.status == "VALID") {
         let dataBody = this.myForm.form.value;
+        console.log(idEdit)
+        console.log(dataBody)
         this.dogsSer.editExistedDog(url, dataBody);
       }
   }

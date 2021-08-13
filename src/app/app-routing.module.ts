@@ -11,13 +11,13 @@ import { EditDogsComponent } from './edit-dogs/edit-dogs.component';
 
 const routes: Routes = [
   {path:"", component:HomeComponent},
-  {path:"dogs", component:DogsListComponent},
   {path:"contact", component:ContactusComponent},
   {path:"login", component:LoginComponent},
   {path:"signup", component:SignupComponent},
-  {path:"addDogs",component:AddDogsComponent},
-  {path:"editDogs/:id",component:EditDogsComponent},
   {path:"admin", component:AdminPanelComponent},
+  {path:"dogs", component:DogsListComponent},
+  {path:"addDog",component:AddDogsComponent},
+  {path:"editDog/:id",component:EditDogsComponent},
 ];
 
 @NgModule({

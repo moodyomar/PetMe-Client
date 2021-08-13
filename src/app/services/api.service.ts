@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  API_URL: string = "https://mapetme.herokuapp.com"
-  // API_URL: string = "http://localhost:3000"
+  // API_URL: string = "https://mapetme.herokuapp.com"
+  API_URL: string = "http://localhost:3000"
   isLoggedIn:any;
 
   constructor(private http: HttpClient) { }

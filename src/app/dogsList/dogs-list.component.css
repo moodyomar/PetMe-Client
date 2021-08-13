@@ -128,6 +128,7 @@ transition: all .3s ease-in;
     position: absolute;
     width: 100%;
     transform: scaleX(0);
+    margin-bottom: -10px;
     height: 3px;
     bottom: 0;
     left: 0;
@@ -138,10 +139,17 @@ transition: all .3s ease-in;
   
   .hover-underline-animation:hover:after {
     transform: scaleX(1);
+margin-bottom: -10px;
     transform-origin: bottom left;
   }
   
-
+.edit a,.add a{
+  color: #fff;
+}
+.edit i:hover,.add i:hover{
+  transition: all .3s ease;
+  transform: scale(1.2);
+}
 
 /* On screens that are 992px or less, set the background color to blue */
 

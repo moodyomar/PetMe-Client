@@ -20,6 +20,9 @@ isLoggedIn:boolean = false;
 this.dogs_ar = this.dogsSer.getDogs();
 let url = `${this.apiSer.API_URL}/dogs/`
 this.dogsSer.doApiList(url)
+setTimeout(() => {
+  console.log(this.dogs_ar)
+}, 5000);
   }
 
   ngDoCheck(): void {
