@@ -32,8 +32,6 @@ export class EditDogsComponent implements OnInit {
       let url = `${this.dogsSer.API_URL}/dogs/${idEdit}`;
       if (this.myForm.form.status == "VALID") {
         let dataBody = this.myForm.form.value;
-        console.log(idEdit)
-        console.log(dataBody)
         this.dogsSer.editExistedDog(url, dataBody);
       }
   }

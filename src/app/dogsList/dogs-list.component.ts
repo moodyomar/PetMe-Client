@@ -12,7 +12,9 @@ import { UsersService } from '../services/users.service';
 export class DogsListComponent implements OnInit {
   dogs_ar:any[] = [];
 isLoggedIn:boolean = false;
-  // dogs_ar_json:any = dogs_ar_json;
+showModal:boolean = false;
+idDel:String = 'asdasd'
+
   constructor(private apiSer:ApiService,private dogsSer:DogsService,private userSer:UsersService) { }
 
 
@@ -20,9 +22,6 @@ isLoggedIn:boolean = false;
 this.dogs_ar = this.dogsSer.getDogs();
 let url = `${this.apiSer.API_URL}/dogs/`
 this.dogsSer.doApiList(url)
-setTimeout(() => {
-  console.log(this.dogs_ar)
-}, 5000);
   }
 
   ngDoCheck(): void {
@@ -33,5 +32,19 @@ setTimeout(() => {
       this.isLoggedIn = false;
     }
   }
+ifYes():void{
+let url = `${this.apiSer.API_URL}/dogs/${this.idDel}`
+this.dogsSer.deleteDog(url)
+this.showModal = !this.showModal
+console.log(this.idDel)
+}
+ifNo():void{
+  this.showModal = !this.showModal;
+}
+  userDeleteRequest(_id:String):void{
+    this.showModal = !this.showModal
+    this.idDel = _id;
+  }
+
 
 }

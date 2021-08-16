@@ -1,3 +1,6 @@
+*{
+box-sizing: border-box;
+}
 .hoverable:hover{
   transform: scale(1.05);
   transition: .2s ease-in;
@@ -23,7 +26,41 @@ background-color: #212529 !important;
 background-size: cover;
 background-position: center;
   }
-
+.customModal{
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 25px;
+}
+.content{
+  min-width: 250px;
+  min-height: 230px;
+background-color: #fff;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  padding: 25px;
+}
+.msg{
+  margin-bottom: 45px;
+}
+.buttons{
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.yes{
+  background-color: #51A351 !important;
+  border: none !important;
+}
+.no{
+  background-color: #BD362F !important;
+  border: none !important;
+}
 
   /* --- */
 figure{
@@ -143,10 +180,10 @@ margin-bottom: -10px;
     transform-origin: bottom left;
   }
   
-.edit a,.add a{
+.edit a,.delete a{
   color: #fff;
 }
-.edit i:hover,.add i:hover{
+.edit i:hover,.delete i:hover{
   transition: all .3s ease;
   transform: scale(1.2);
 }

@@ -17,7 +17,6 @@ export class UsersService {
   login(_loginData: any): void {
     let _url = `${this.apiSer.API_URL}/users/login`
     this.apiSer.postApiRequest(_url, _loginData).subscribe((resp: any) => {
-      console.log(resp)
       localStorage.setItem("tok", resp.token)
       this.toast.showSuccess("Logged in Successfully", "Success")
       setTimeout(() => {

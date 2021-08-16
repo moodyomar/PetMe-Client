@@ -31,7 +31,6 @@
         <option value="medium">Medium</option>    
         <option value="big">big</option>    
         </select>
-        <!-- <div *ngIf="dogSize. && dogSize.invalid" class="text-danger text-start">Enter valid Birthday</div> -->
       </div>
 
       <div class="mt-3 text-start">
@@ -40,7 +39,6 @@
         <option value="male">Male</option>    
         <option value="female">Female</option>    
         </select>
-        <!-- <div *ngIf="dogSize. && dogSize.invalid" class="text-danger text-start">Enter valid Birthday</div> -->
       </div>
 
 <div>
@@ -49,8 +47,8 @@
 
 <div class="mt-3 text-start">
         <label>Dog's Image:</label>
-        <input name="image" #inputImage="ngModel" ngModel type="file" class="form-control mt-3" placeholder="image..."
-           minlength="3">
+        <input name="image" #inputImage="ngModel" ngModel type="file" class="form-control mt-3" placeholder="image...">
+        <input name="image" #inputImage="ngModel" ngModel class="form-control mt-3" placeholder="Or paste the image link here...">
         <div *ngIf="inputImage.touched && inputImage.invalid" class="text-danger text-start">Enter a valid Image</div>
       </div>
       <div>

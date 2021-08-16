@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
           // TODO : redirect to admin
           // this.route.navigate(["/admin"])
         }
-        console.log(data);
       }
       catch (err) {
         // if there an error
@@ -42,7 +41,6 @@ export class LoginComponent implements OnInit {
         }
         console.log(err);
       }
-      console.log(this.myForm.form.value);
     }
   }
 }

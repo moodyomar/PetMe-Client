@@ -52,7 +52,6 @@ authGetRequest(_url:any):any{
       })
       return this.http.put(_url, _bodyData, { headers: xAuth })
     }
-
   }
 
   delApiRequest(_url: any): any {

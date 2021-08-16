@@ -71,13 +71,49 @@ addNewDog(_dog:any):void{
 }
 
 editExistedDog(url:any, _bodyData:any){
+  
+try{
   this.apiSer.putApiRequest(url, _bodyData).subscribe((resp:any)=>{
-    this.toast.showInfo("Dog details were successfully updated", "")
+    if(resp.n == 1){
+      this.toast.showInfo("Dog details were successfully updated", "")
     setTimeout(()=>{
       this.router.navigate(['/dogs'])
     },400)
+    }else{
+      this.toast.showWarning("Ops Something wrong happened !", "")
+      console.log(resp);
+    }
    
   })
+} catch(err) {
+    console.log(err);
 }
+
+
+}
+
+deleteDog(url:any){
+  
+  try{
+    this.apiSer.delApiRequest(url).subscribe((resp:any)=>{
+      console.log(resp)
+      if(resp.n == 1){
+        this.toast.showInfo("Dog is deleted successfully", "")
+        setTimeout(()=>{
+        location.reload();
+      },300)
+      }else{
+        this.toast.showWarning("Ops Something wrong happened !", "")
+        console.log(resp);
+      }
+     
+    })
+  } catch(err) {
+      console.log(err);
+  }
+  
+  
+  }
+  
 
 }
