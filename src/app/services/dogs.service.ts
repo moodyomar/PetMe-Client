@@ -44,13 +44,19 @@ export class DogsService {
   doApiSearch(_url:String,_searchQ:String):void{
     if(_searchQ == ""){
       this.doApiList(_url)
+     // todo getting all dogs without clickg ente rif its emptey or with valid dog name
     }else {
+      // todo : if there is no such dog(serachQ) i dont want it to do all the code below
       this.dogs_ar.splice(0, this.dogs_ar.length)
     this.apiSer.getApiRequest(_url).subscribe((data: any) => {
       this.dogs_ar.push(...data);
-      let temp_ar = this.dogs_ar.filter(dogs => dogs.breed.toLowerCase() == _searchQ.toLowerCase())
+      // let temp_ar = this.dogs_ar.filter(dogs => dogs.breed.toLowerCase() == _searchQ.toLowerCase())
+
+      // if one of two or more string been search it will show results with this string
+      let temp_v2 = this.dogs_ar.filter(dogs => dogs.breed.toLowerCase().includes(_searchQ))
+      console.log(_searchQ)
       this.dogs_ar.splice(0, this.dogs_ar.length);
-      this.dogs_ar.push(...temp_ar);
+      this.dogs_ar.push(...temp_v2);
     })
     }
     

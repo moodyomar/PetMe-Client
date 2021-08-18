@@ -18,7 +18,10 @@ sortSelect = 'age'
   onDogSearch():void{
 this.dogsSer.searchQ = this.searchQ;
 let url = `${this.apiSer.API_URL}/dogs`
-    this.dogsSer.doApiSearch(url,this.searchQ)  
+let dogs = this.dogsSer.getDogs()
+let temp_v2 = dogs.filter((dog:any) => dog.breed.toLowerCase().includes(this.searchQ))
+console.log(temp_v2)
+if(this.searchQ.length - 1 > 1 ) this.dogsSer.doApiSearch(url,this.searchQ)  
     
   }
 

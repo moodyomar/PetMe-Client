@@ -9,7 +9,7 @@
       <i class="fa fa-sort fs-5 me-2 mb-2 mt-2" aria-hidden="true"></i>
     </div>
     <div class="search d-flex align-items-center justify-content-end">
-      <input (keydown.enter)="onDogSearch()" type="text" class="form-control w-75 me-2" placeholder="Search by breed..." [(ngModel)]="searchQ">
+      <input (ngModelChange)="onDogSearch()" type="text" class="form-control w-75 me-2" placeholder="Search by breed..." [(ngModel)]="searchQ">
       <div (click)="onDogSearch()" class=""><i class="fa fa-search fs-5 me-2 mb-2 mt-2" aria-hidden="true"></i></div>
     </div>
   </div>
