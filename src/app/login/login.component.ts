@@ -26,20 +26,16 @@ export class LoginComponent implements OnInit {
       // success
       let formData = this.myForm.form.value;
       try {
-        let data = { user: 'empty test' }
+        console.log(formData)
         this.usersSer.login(formData)
-        // success log in
-        if (data.user) {
-          // TODO : redirect to admin
-          // this.route.navigate(["/admin"])
-        }
+        console.log('ccc');
       }
       catch (err) {
-        // if there an error
+        // if there is an error
         if (err.code) {
           alert("Try again user or password worng")
         }
-        console.log(err);
+      
       }
     }
   }

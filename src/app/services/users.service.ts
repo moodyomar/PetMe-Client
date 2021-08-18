@@ -18,14 +18,13 @@ export class UsersService {
     let _url = `${this.apiSer.API_URL}/users/login`
     this.apiSer.postApiRequest(_url, _loginData).subscribe((resp: any) => {
       localStorage.setItem("tok", resp.token)
-      this.toast.showSuccess("Logged in Successfully", "Success")
+      this.toast.showSuccess(`You have Logged in`, "Success");
       setTimeout(() => {
         this.router.navigate(["/admin"])
       }, 1000);
 
     }, (rej: any) => {
       this.toast.showError("Please try again or come back later", "Wrong email or Password")
-      console.log(rej)
     })
   }
 
@@ -43,8 +42,20 @@ export class UsersService {
   }
   logOut():void{
     localStorage.removeItem("tok")
-    this.toast.showWarning("Logged out", "See you soon!")
+    this.toast.showWarning(`Bye Bye ${this.userInfo.name}`, "See you soon!")
     this.router.navigate(['/login'])
   }
+
+  getUserInfo(){
+    let _url = `${this.apiSer.API_URL}/users/userInfo`
+    this.apiSer.authGetRequest(_url).subscribe((res:any)=>{
+      for (let key in res){
+        this.userInfo[key] = res[key]
+      }
+    })
+
+  }
+
+
 }
 

@@ -39,10 +39,6 @@ onSub() {
   }else{
     this.toast.showError("please fill out all the details correctly about the dog","Error")
   }
-
-  // result.user -> success
-  // result.code -> problem
-  //TODO: also add new record in db 
 }
 
 }
