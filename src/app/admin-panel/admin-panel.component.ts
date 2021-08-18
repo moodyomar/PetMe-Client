@@ -19,7 +19,7 @@ export class AdminPanelComponent implements OnInit {
       this.userSer.isLoggedIn = true;
       this.userSer.getUserInfo()
       this.userInfo = this.userSer.userInfo
-      console.log(this.userInfo)
+
       
     } else {
       this.isLoggedIn = false;

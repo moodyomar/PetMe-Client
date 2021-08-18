@@ -26,9 +26,7 @@ export class LoginComponent implements OnInit {
       // success
       let formData = this.myForm.form.value;
       try {
-        console.log(formData)
         this.usersSer.login(formData)
-        console.log('ccc');
       }
       catch (err) {
         // if there is an error

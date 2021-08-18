@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 // import {dogs_ar_json} from "../data/sample"
 import { ApiService } from '../services/api.service';
@@ -13,7 +14,9 @@ export class DogsListComponent implements OnInit {
   dogs_ar:any[] = [];
 isLoggedIn:boolean = false;
 showModal:boolean = false;
-idDel:String = 'asdasd'
+idDel:String = '';
+userInfo:any = {};
+
 
   constructor(private apiSer:ApiService,private dogsSer:DogsService,private userSer:UsersService) { }
 
