@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { DogsService } from '../services/dogs.service';
 import { ToastifyService } from '../services/toastify.service';
 
+
+
 @Component({
   selector: 'app-add-dogs',
   templateUrl: './add-dogs.component.html',
@@ -24,26 +26,22 @@ export class AddDogsComponent implements OnInit {
 
 onSub() {
   let _dogDetails = this.myForm.form.value
-  let result = {user:"test test",message:"test",code:"test"}
   console.log(_dogDetails)
   if(this.myForm.form.status == "VALID"){
-    if(result.user) {
+    
       this.dogsSer.addNewDog(_dogDetails);
-      setTimeout(() => {
+      setTimeout(() => { 
         this.router.navigate(["/dogs"])
       },400)
-  console.log(result.user)
-    }
-    if(result.code){
-      console.log(result)
-    }
+
+    
+
   }else{
-    this.toast.showError("please fill out every little detail correctly about the dog","Error")
+    this.toast.showError("please fill out all the details correctly about the dog","Error")
   }
 
   // result.user -> success
   // result.code -> problem
-  return result;
   //TODO: also add new record in db 
 }
 

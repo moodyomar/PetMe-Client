@@ -71,8 +71,7 @@ addNewDog(_dog:any):void{
     this.toast.showInfo("Dog's Added !","Welcome")
   },(rej:any)=> {
     console.log(rej)
-    this.toast.showError("please fill every little detail correctly about the dog !","Error")
-    alert(rej.error)
+    this.toast.showError("Something is wrong, Please make sure you are singned in and try again!","Error")
   })
 }
 
