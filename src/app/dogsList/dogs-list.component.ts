@@ -39,7 +39,6 @@ ifYes():void{
 let url = `${this.apiSer.API_URL}/dogs/${this.idDel}`
 this.dogsSer.deleteDog(url)
 this.showModal = !this.showModal
-console.log(this.idDel)
 }
 ifNo():void{
   this.showModal = !this.showModal;
