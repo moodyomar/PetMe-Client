@@ -65,7 +65,6 @@ export class DogsService {
 
 
 addNewDog(_dog:any):void{
-  // not completed !
   let _url = `${this.apiSer.API_URL}/dogs/`
   this.apiSer.authPostRequest(_url,_dog).subscribe((resp:any) => {
     this.toast.showInfo("Dog's Added !","Welcome")
@@ -93,9 +92,8 @@ try{
 } catch(err) {
     console.log(err);
 }
-
-
 }
+
 
 deleteDog(url:any){
   
@@ -105,11 +103,10 @@ deleteDog(url:any){
       if(resp.n == 1){
         this.toast.showInfo("Dog is deleted successfully", "")
         setTimeout(()=>{
-        location.reload();
+          this.reloadCurrentRoute();
       },300)
       }else{
         this.toast.showWarning("Ops Something wrong happened !", "")
-        console.log(resp);
       }
      
     })
@@ -119,6 +116,12 @@ deleteDog(url:any){
   
   
   }
-  
 
+  reloadCurrentRoute() {
+    let currentUrl = this.router.url;
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+        this.router.navigate([currentUrl]);
+    });
+  }
+  
 }
