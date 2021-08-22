@@ -2,6 +2,7 @@ import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../services/users.service';
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -13,6 +14,10 @@ export class HeaderComponent implements OnInit {
 
   toggleClass() {
     this.classApplied = !this.classApplied;
+  }
+  private tokenExpired(token: string) {
+    const expiry = (JSON.parse(atob(token.split('.')[1]))).exp;
+    return (Math.floor((new Date).getTime() / 1000)) >= expiry;
   }
 
   constructor(private userSer: UsersService,private scroll: ViewportScroller) { }
@@ -27,11 +32,14 @@ export class HeaderComponent implements OnInit {
 }
 
   ngDoCheck(): void {
-    if (localStorage["tok"]) {
+    if (localStorage["tok"] && !this.tokenExpired(localStorage["tok"])) {
       this.isLoggedIn = true;
       this.userSer.isLoggedIn = true;
+      console.log(' there is token')
     } else {
       this.isLoggedIn = false;
+      localStorage.removeItem('tok')
+      console.log('No token found or expired')
     }
   }
 

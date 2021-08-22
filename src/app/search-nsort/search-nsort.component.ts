@@ -8,26 +8,27 @@ import { DogsService } from '../services/dogs.service';
   styleUrls: ['./search-nsort.component.css']
 })
 export class SearchNsortComponent implements OnInit {
-searchQ:any = '';
-sortSelect = 'age'
-  constructor(private dogsSer:DogsService,private apiSer:ApiService) { }
+  searchQ: any = '';
+  sortSelect = 'age'
+  constructor(private dogsSer: DogsService, private apiSer: ApiService) { }
 
   ngOnInit(): void {
   }
 
-  onDogSearch():void{
-this.dogsSer.searchQ = this.searchQ;
-let url = `${this.apiSer.API_URL}/dogs`
-let dogs = this.dogsSer.getDogs()
-let temp_v2 = dogs.filter((dog:any) => dog.breed.toLowerCase().includes(this.searchQ))
-console.log(temp_v2)
-if(this.searchQ.length - 1 > 1 ) this.dogsSer.doApiSearch(url,this.searchQ)  
-    
+  onDogSearch(): void {
+    let searchQ = this.searchQ.toLowerCase()
+    this.dogsSer.searchQ = searchQ;
+    let url = `${this.apiSer.API_URL}/dogs`
+    // let dogs = this.dogsSer.getDogs()
+    // let temp_v2 = dogs.filter((dog: any) => dog.breed.toLowerCase().includes(searchQ))
+    console.log(searchQ.length)
+    if (searchQ.length - 1 > 1 || searchQ.length == 1) this.dogsSer.doApiSearch(url, searchQ)
+
   }
 
-    onSortChange(){
+  onSortChange() {
     let url = `${this.apiSer.API_URL}/dogs`
-    this.dogsSer.doApiList(url,this.sortSelect)  
+    this.dogsSer.doApiList(url, this.sortSelect)
   }
 
 }
