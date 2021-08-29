@@ -11,7 +11,7 @@
         <div *ngIf="inputEmail.touched && inputEmail.invalid" class="text-danger text-start">Enter valid mail</div>
       </div>
       <div>
-        <input name="password" #inputPass="ngModel" ngModel type="text" class="form-control mt-3"
+        <input name="password" #inputPass="ngModel" ngModel type="password" class="form-control mt-3"
           placeholder="Enter Your password" required minlength="3">
         <div *ngIf="inputPass.touched && inputPass.invalid" class="text-danger text-start">Enter valid password</div>
       </div>
