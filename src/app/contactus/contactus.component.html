@@ -1,3 +1,53 @@
-<div class="container-fluid text-center my-5" >
-  Contact us
+<div class="container-fluid">
+  <div class="container text-center p-5">
+    <h1 class="display-4 mb-5">Need help?<br>
+
+    </h1>
+    <form #contactForm="ngForm" (ngSubmit)="onSub()" class="col-lg-6 mx-auto">
+      <h5>Leave us a Message</h5>
+  
+
+      <div>
+        <input name="name" #inputName="ngModel" ngModel type="text" class="form-control mt-3" style="font-family:Arial, FontAwesome" placeholder="&#xf007; | Name"
+          required minlength="3">
+        <div *ngIf="inputName.touched && inputName.invalid" class="text-danger text-start">Enter valid name</div>
+      </div>
+
+      <div>
+        <input name="email" #inputEmail="ngModel" ngModel type="email" class="form-control mt-3"
+          placeholder="&#xf0e0; | Email" style="font-family:Arial, FontAwesome" required email>
+        <div *ngIf="inputEmail.touched && inputEmail.invalid" class="text-danger text-start">Enter valid mail</div>
+      </div>
+
+      <div>
+        <input name="phone" #inputPhone="ngModel" ngModel type="text" class="form-control mt-3" style="font-family:Arial, FontAwesome" placeholder="&#xf095; | Phone"
+          required minlength="3">
+        <div *ngIf="inputPhone.touched && inputPhone.invalid" class="text-danger text-start">Enter valid phone</div>
+      </div>
+
+      <div class="mt-3 text-start">
+        <label><i class="fa ms-2 fa-question-circle" aria-hidden="true"></i>
+           Subject</label>
+        <select name="subject" #subject="ngModel" ngModel required class="form-select">
+          <option value="" disabled selected> Select Subject</option>
+        <option value="adoptingDog">Adopting a Dog</option>    
+        <option value="savingDog">Save a Dog</option>    
+        <option value="websiteBug">Website Bug</option>    
+        <option value="other">other</option>    
+        </select>
+      </div>
+
+      <div>
+        <textarea name="message" #message="ngModel" ngModel type="text" class="form-control mt-3" placeholder="&#xf075; | Your message goes here..." rows="7" style="font-family:Arial, FontAwesome"
+          required minlength="10"></textarea>
+        <div *ngIf="message.touched && message.invalid" class="text-danger text-start">Please enter your message here</div>
+      </div>
+
+      <div>
+        <button class="btn btn-warning w-100 my-3">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i>
+        </button>
+      </div>
+    </form>
+
+  </div>
 </div>

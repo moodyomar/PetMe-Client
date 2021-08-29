@@ -28,7 +28,6 @@ export class HeaderComponent implements OnInit {
 
   scrolldown(){
     this.scroll.scrollToPosition([0,450])
-    console.log("triggered")
 }
 
   ngDoCheck(): void {
@@ -39,7 +38,7 @@ export class HeaderComponent implements OnInit {
     } else {
       this.isLoggedIn = false;
       localStorage.removeItem('tok')
-      console.log('No token found or expired')
+      // console.log('No token found or expired')
     }
   }
 

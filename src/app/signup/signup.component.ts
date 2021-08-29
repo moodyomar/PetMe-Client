@@ -15,25 +15,14 @@ export class SignupComponent implements OnInit {
   }
 
    onSub() {
-    console.log(this.myForm.form.value);
-    let user = this.myForm.form.value
-    let result = {user:"test test",message:"test",code:"test"}
-    if(result.user) {
-      // Todo add new record
-    this.usersSer.signUp(user);
-    setTimeout(() => {
-      this.router.navigate(["/login"])
-      },400)
+    if(this.myForm.form.status == "VALID"){
+      let user = this.myForm.form.value
+      this.usersSer.signUp(user);
+      setTimeout(() => {
+        this.router.navigate(["/login"])
+        },400)
+    }
 
-    }
-    if(result.code){
-      console.log(result.message)
-    }
-    // result.user -> success
-    // result.code -> problem
-    return result;
-    //TODO: also add new record in db of firebase
   }
-
 
 }
