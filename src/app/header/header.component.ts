@@ -34,11 +34,9 @@ export class HeaderComponent implements OnInit {
     if (localStorage["tok"] && !this.tokenExpired(localStorage["tok"])) {
       this.isLoggedIn = true;
       this.userSer.isLoggedIn = true;
-      console.log(' there is token')
     } else {
       this.isLoggedIn = false;
       localStorage.removeItem('tok')
-      // console.log('No token found or expired')
     }
   }
 

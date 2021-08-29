@@ -1,6 +1,4 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-// import {dogs_ar_json} from "../data/sample"
 import { ApiService } from '../services/api.service';
 import { DogsService } from '../services/dogs.service';
 import { UsersService } from '../services/users.service';
@@ -25,6 +23,15 @@ userInfo:any = {};
 this.dogs_ar = this.dogsSer.getDogs();
 let url = `${this.apiSer.API_URL}/dogs/`
 this.dogsSer.doApiList(url)
+if (localStorage["tok"]) {
+  this.isLoggedIn = true;
+  this.userSer.isLoggedIn = true;
+  this.userSer.getUserInfo()
+  this.userInfo = this.userSer.userInfo
+} else {
+  this.isLoggedIn = false;
+  this.userSer.isLoggedIn = false;
+}
   }
 
   ngDoCheck(): void {
@@ -33,6 +40,7 @@ this.dogsSer.doApiList(url)
       this.userSer.isLoggedIn = true;
     } else {
       this.isLoggedIn = false;
+      this.userSer.isLoggedIn = false;
     }
   }
 ifYes():void{

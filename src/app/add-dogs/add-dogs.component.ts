@@ -34,8 +34,6 @@ onSub() {
         this.router.navigate(["/dogs"])
       },400)
 
-    
-
   }else{
     this.toast.showError("please fill out all the details correctly about the dog","Error")
   }

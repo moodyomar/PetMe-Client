@@ -19,7 +19,7 @@
 
     <figure  class="hover-img">
       <div [ngStyle]="{'background-image': 'url(' + dog.image || '../../images.noImg.jpg' + ')'}" class="card-img-top ngBackground" alt="..."></div>
-      <figcaption >
+      <figcaption *ngIf="dog.user_id === userInfo._id">
         <div class="options">
         <h4 *ngIf="isLoggedIn" class="edit hover-underline-animation"><a routerLink="/editDog/{{dog._id}}"><i class="fs-3 fa fa-pencil-square-o" aria-hidden="true"></i></a>
           </h4>
