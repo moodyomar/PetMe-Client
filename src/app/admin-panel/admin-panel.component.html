@@ -26,13 +26,17 @@
 
    <div class="row p-5 d-flex justify-content-center">
     <div class="d-flex justify-content-around my-3">
-      <div class="col-4 d-flex justify-content-center "> <a routerLink="/addDog" class="btnv2 btn-sm animated-button thar-one"><i class="fa fa-paw" aria-hidden="true"></i>Add <br>a Dog</a> </div>
-      <div class="col-4 d-flex justify-content-center"> <a routerLink="/dogs" class="btnv2 btn-sm animated-button thar-two"><i class="fa fa-paw" aria-hidden="true"></i>Show all <br>Dogs</a> </div>
+      <div class="col-4 d-flex justify-content-center me-3 "> <a routerLink="/addDog" class="btnv2 btn-sm animated-button thar-one"><i class="fa fa-paw" aria-hidden="true"></i>Add <br>a Dog</a> </div>
+      <div class="col-4 d-flex justify-content-center me-3"> <a routerLink="/dogs" class="btnv2 btn-sm animated-button thar-two"><i class="fa fa-paw" aria-hidden="true"></i>Show all <br>Dogs</a> </div>
       <div class="col-4 d-flex justify-content-center"> <a (click)="showUserDogs()" class="btnv2 btn-sm animated-button thar-one"><i class="fa fa-paw" aria-hidden="true"></i>Dogs I've<br>Added</a> </div>
    </div>
       
       <!-- user dogs -->
       
+
+       <div *ngIf="displayUserDogs && usersDogs.length < 1" class="row my-5 d-flex justify-content-center p-5">
+        <h4>You haven't added any dogs yet!</h4>
+        </div>
 
        <div *ngIf="displayUserDogs" class="row my-5 d-flex justify-content-center p-5">
         <div data-aos="zoom-out-up" class="card shadow hoverable m-4 " style="width: 18rem;" *ngFor="let dog of usersDogs">

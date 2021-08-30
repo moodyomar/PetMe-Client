@@ -9,6 +9,32 @@
   text-shadow: 4px 4px 7px rgb(0, 0, 0, 0.4);
 }
 
+.scrollToTop{
+  display: grid;
+  place-items: center;
+  color: #212529;
+  font-size: 1.4rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  box-shadow: 4px 6px 8px 1px rgba(0, 0, 0, 0.421);
+  background-color: #FFC009;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  opacity: 0.5;
+  transform: scale(0.75);
+  transition: all .25s ease-out;
+  cursor: pointer;
+}
+.scrollToTop:hover{
+  opacity: 1;
+  transform: scale(1);
+  transition: all .3s ease-in;
+}
+
 .mobileMenu,
 .adminPhone {
   display: none;
