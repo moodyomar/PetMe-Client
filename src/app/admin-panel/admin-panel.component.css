@@ -1,5 +1,5 @@
 
-.btn{
+.btnv2{
   height: 100px !important;
   width: 120px !important;
   display: grid !important;
@@ -75,7 +75,7 @@ a.animated-button.thar-two:before {
   font-size: 6rem !important;
 }
 
-.card {
+.cardv2 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
   margin: auto;
@@ -91,7 +91,7 @@ a.animated-button.thar-two:before {
 
 
 @media(min-width:1000px){
-  .btn{
+  .btnv2{
     width: 200px !important;
     height: 150px !important;
     font-size: 1.3rem;
