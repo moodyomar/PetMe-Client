@@ -19,8 +19,13 @@
       <i class="fa profileIcon fa-user-circle-o mb-3 fs-3"
             aria-hidden="true"></i>
       <h1>{{userInfo.name}}</h1>
-      <p class="title">{{userInfo.email}}</p>
-      <p>{{userInfo.phone}}</p>
+      <p class="title">Joined: {{userInfo.createdAt.slice(0,10)}}</p>
+     <div class="d-flex justify-content-center">
+      <p class="me-4"><i class="fa fa-phone-square" aria-hidden="true"></i>
+        {{userInfo.phone}}</p>
+      <p><i class="fa fa-envelope" aria-hidden="true"></i>
+        {{userInfo.email}}</p>
+     </div>
     </div>
 
 

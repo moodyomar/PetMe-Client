@@ -33,9 +33,8 @@ if (localStorage["tok"]) {
 
 setTimeout(() => {
   this.usersDogs = this.dogs_ar.filter(dog => dog.user_id === this.userInfo._id)
-  console.log(this.usersDogs)
+  console.log(this.userInfo)
 }, 500);
-
 
 
 } else {
