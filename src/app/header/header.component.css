@@ -10,6 +10,7 @@
 }
 
 .scrollToTop{
+  z-index: 20;
   display: grid;
   place-items: center;
   color: #212529;
@@ -48,7 +49,12 @@
   .adminPhone {
     display: block;
   }
-
+.scrollToTop{
+  z-index: 50;
+  margin: 15px 15px;
+  opacity: 1;
+  transition: all .3s ease-in;
+}
   .mobileMenu a,
   .adminPhone a {
     color: #fff;

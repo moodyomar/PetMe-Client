@@ -61,7 +61,19 @@ export class DogsService {
     
   }
 
-
+uploadDogImage(file:File){
+  let _url = `${this.apiSer.API_URL}/dogs/uploadImage`
+  console.log('in upload image\n',file)
+  this.apiSer.postUploadImage(_url,file).subscribe((resp:any) => {
+console.log('in subscribe')
+    console.log(file)
+    console.log(resp)
+    this.toast.showInfo("image uploaded !","Welcome")
+  },(rej:any)=> {
+    console.log(rej)
+    this.toast.showError("Something is wrong!","Error")
+  })
+}
 
 addNewDog(_dog:any):void{
   let _url = `${this.apiSer.API_URL}/dogs/`

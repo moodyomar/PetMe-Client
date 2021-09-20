@@ -4,7 +4,7 @@
       <br>
 
     </h2>
-    <form #f="ngForm" (ngSubmit)="onSub()" class="col-lg-6 mx-auto">
+    <!-- <form #f="ngForm" (ngSubmit)="onSub()" class="col-lg-6 mx-auto">
       <h5>Help me find a home</h5>
       <div>
         <div>
@@ -48,7 +48,7 @@
 
 <div class="mt-3 text-start">
         <label>Dog's Image:</label>
-        <input name="image" #inputImage="ngModel" ngModel type="file" class="form-control mt-3" placeholder="image...">
+        <input name="uploadedImage" #inputImage="ngModel" ngModel type="file" class="form-control mt-3" placeholder="image...">
         <input name="image" #inputImage="ngModel" ngModel class="form-control mt-3" placeholder="Or paste the image link here...">
         <div *ngIf="inputImage.touched && inputImage.invalid" class="text-danger text-start">Enter a valid Image</div>
       </div>
@@ -59,6 +59,10 @@
         <br>
         PetMe © 2021 - 2022
       </div>
+    </form> -->
+    <form enctype="multipart/form-data">
+      <input type="file" name="file" (change)="onChange($event)">
+      <button (click)="onSubUpload()">Submit</button>
     </form>
   </div>
 </div>
