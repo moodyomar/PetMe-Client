@@ -22,11 +22,9 @@ export class DogsService {
 
   getDogDetails(url:any):void{
     this.apiSer.authGetRequest(url).subscribe((res:any)=>{
-      console.log(res)
       for (let key in res){
         this.dogDetailsObj[key] = res[key]
       }
-      console.log(this.dogDetailsObj)
     })
   }
 
@@ -53,7 +51,6 @@ export class DogsService {
 
       // if one of two or more string been search it will show results with this string
       let temp_v2 = this.dogs_ar.filter(dogs => dogs.breed.toLowerCase().includes(_searchQ))
-      console.log(_searchQ)
       this.dogs_ar.splice(0, this.dogs_ar.length);
       this.dogs_ar.push(...temp_v2);
     })

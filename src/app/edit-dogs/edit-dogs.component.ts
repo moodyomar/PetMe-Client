@@ -17,7 +17,6 @@ export class EditDogsComponent implements OnInit {
     let url = `${this.dogsSer.API_URL}/dogs/single/${idEdit}`
     this.dogsSer.getDogDetails(url);
     this.dogDetailsObj = this.dogsSer.dogDetailsObj
-    console.log(this.dogDetailsObj)
   }
 
 

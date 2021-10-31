@@ -26,7 +26,6 @@ export class AddDogsComponent implements OnInit {
 
 onSub() {
   let _dogDetails = this.myForm.form.value
-  console.log(_dogDetails)
   if(this.myForm.form.status == "VALID"){
     
       this.dogsSer.addNewDog(_dogDetails);
@@ -40,7 +39,6 @@ onSub() {
 }
 
 onSubUpload(){
-  console.log('onSubUpload excuted')
 
   // this.dogsSer.uploadDogImage()
 }
